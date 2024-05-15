@@ -138,9 +138,9 @@ st.write(comuna_filtradas)
 # Creo un dataset filtrado
 hechos_filtrado = []
 for i in comuna_filtradas:
-    
+    pass
 
-superior = st.columns(2) # Dos columnas superiores
+superior= st.columns(2) # Dos columnas superiores
 
 with superior[0]: # Columna con el pie chart
     conteo = victimas['SEXO'].value_counts()
