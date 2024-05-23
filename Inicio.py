@@ -6,6 +6,17 @@ import plotly.express as px
 # Configuro para que el layout sea "wide"
 st.set_page_config(layout="wide")
 
+# BODY ---------------------------------------------------------------------------------------------------------------
+# Descripción
+
+st.write(
+    '''
+    📌 Mi nombre es Dante. Soy un estudiante apasionado de programación y la estadística con un enfoque especial en el diseño, desarrollo e implementación de soluciones robustas por medio del Data Engineering 💻 así cómo también de la búsqueda de insights a través de los datos y del pensamiento analítico a la hora de la toma de decisiones 📊.
+    
+    
+    '''
+)
+
 # TAIL ---------------------------------------------------------------------------------------------------------------
 
 # Creo dos columnas
