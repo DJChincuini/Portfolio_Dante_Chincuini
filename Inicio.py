@@ -42,8 +42,13 @@ st.write("## Proyectos")
 proyectos = st.columns(2)
 
 with proyectos[0]:
-    with st.container():
-        st.page_link("./pages/2_ Siniestros Viales.py", label='Siniestros Viales en la ciudad de Buenos Aires')
+    with st.container(height=200):
+        st.write('##### Siniestros Viales')
+        st.write('Análisis sobre los siniestros viales en la ciudad de Buenos Aires con dos datasets del Observatorio Vial de la Ciudad.')
+        
+        boton = st.columns(4)
+        with boton[3]:
+            st.page_link("./pages/2_ Siniestros Viales.py", label='VER PROYECTO')
     
 st.write('#')
 
