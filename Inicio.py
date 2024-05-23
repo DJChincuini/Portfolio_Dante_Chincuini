@@ -22,20 +22,12 @@ with body[0]:
         '''
     )
 
-# Código CSS para centrar la imagen a la derecha  
-def imagen_centro_derecha(image_url):
-    st.markdown(
-        f"""
-        <div style="text-align: right;">
-            <img src="{image_url}" style="width: 50%;">
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-    
 with body[1]:
-    # Uso la función
-    imagen_centro_derecha('./Img/foto perfil.jpg')
+    espacio = st.columns(2)
+    with espacio[0]:
+        pass
+    with espacio[1]:
+        st.image('./Img/foto perfil.jpg', width=250)
 
 # TAIL ---------------------------------------------------------------------------------------------------------------
 
