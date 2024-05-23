@@ -13,8 +13,6 @@ victimas = pd.read_csv('./Datasets/Victimas.csv')
 victimas = victimas.replace("SD",np.nan)
 hechos = hechos.replace("SD",np.nan)
 
-
-#---------------------------------------------------------------------------------------------------------------------
 # Configuro para que el layout sea "wide"
 st.set_page_config(layout="wide")
 
