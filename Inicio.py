@@ -42,6 +42,8 @@ st.write("## Proyectos")
 proyectos = st.columns(2)
 
 with proyectos[0]:
+    
+    # Proyecto de Siniestros Viales
     with st.container(height=200):
         st.write('##### Siniestros Viales')
         st.write('Análisis sobre los siniestros viales en la ciudad de Buenos Aires con dos datasets del Observatorio Vial de la Ciudad.')
