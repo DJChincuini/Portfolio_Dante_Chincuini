@@ -34,6 +34,19 @@ with body[1]:
         st.image('./Img/foto perfil.jpg', width=250)
     with espacio[2]:
         pass
+    
+st.write('#')
+
+st.write("## Proyectos")
+
+proyectos = st.columns(2)
+
+with proyectos[0]:
+    with st.container():
+        st.page_link("./pages/2_ Siniestros Viales.py", label='Siniestros Viales en la ciudad de Buenos Aires')
+    
+st.write('#')
+
 
 # TAIL ---------------------------------------------------------------------------------------------------------------
 
