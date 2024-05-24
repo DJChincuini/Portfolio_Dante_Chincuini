@@ -129,7 +129,6 @@ comuna_filtradas = st.multiselect(
     help='Selecciona una opción'
 )
 
-st.write(comuna_filtradas)
 
 # Creo un dataset filtrado
 if 'DESCONOCIDO' in comuna_filtradas:
