@@ -16,6 +16,15 @@ hechos = hechos.replace("SD",np.nan)
 # Configuro para que el layout sea "wide"
 st.set_page_config(layout="wide")
 
+# Extraer las columnas deseadas
+hechos_reducido = hechos[['ID', 'COMUNA', 'TIPO_DE_CALLE', 'AAAA', 'VICTIMA', 'ACUSADO', 'pos x', 'pos y']]
+victimas_reducido = victimas[['ID_hecho', 'SEXO', 'EDAD']]
+
+# Renombrar la columna 'ID_hecho' en victimas_reducido para que coincida con 'ID' en hechos_reducido
+victimas_reducido = victimas_reducido.rename(columns={'ID_hecho': 'ID'})
+
+# Realizar la fusión en base a la columna 'ID'
+df_final = pd.merge(hechos_reducido, victimas_reducido, on='ID', how='inner')
 
 #---------------------------------------------------------------------------------------------------------------------
 ### TÍTULO
