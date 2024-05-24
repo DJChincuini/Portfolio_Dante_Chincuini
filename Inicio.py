@@ -37,6 +37,8 @@ with body[1]:
     
 st.write('#')
 
+# PROYECTOS -----------------------------------------------------------------------------------------------------------
+
 st.write("## Proyectos")
 
 proyectos = st.columns(2)
@@ -46,11 +48,11 @@ with proyectos[0]:
     # Proyecto de Siniestros Viales
     with st.container(height=200):
         st.write('##### Siniestros Viales')
-        st.write('Análisis sobre los siniestros viales en la ciudad de Buenos Aires con dos datasets del Observatorio Vial de la Ciudad.')
+        st.write('Análisis sobre los siniestros viales en la ciudad de Buenos Aires con dos datasets del Observatorio Vial de la Ciudad. \n###')
         
-        boton = st.columns(4)
-        with boton[3]:
-            st.page_link("./pages/2_ Siniestros Viales.py", label='VER PROYECTO')
+        boton = st.columns(5)
+        with boton[4]:
+            st.page_link("./pages/2_ Siniestros Viales.py", label='VER')
     
 st.write('#')
 
@@ -65,9 +67,9 @@ with tail[0]:
     sub = st.columns(5)
 
     with sub[0]:
-        st.link_button("LinkedIn", "https://www.linkedin.com/in/dante-chincuini-2828b6281/")
+        st.link_button("LinkedIn", "https://www.linkedin.com/in/dante-chincuini-2828b6281/", use_container_width=True)
     with sub[1]:
-        st.link_button("GitHub", "https://github.com/DJChincuini")
+        st.link_button("GitHub", "https://github.com/DJChincuini", use_container_width=True)
         
 with tail[1]:
     pass
