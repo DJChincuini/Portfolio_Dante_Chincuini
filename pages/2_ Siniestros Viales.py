@@ -134,7 +134,7 @@ st.write("#### Dashboard")
 
 # Agrego cada comuna a una lista.
 comunas = []
-for i in hechos['COMUNA']:
+for i in df_final['COMUNA']:
     if i not in comunas:
         comunas.append(i)
 
@@ -156,12 +156,12 @@ if 'DESCONOCIDO' in comuna_filtradas:
     comuna_filtradas[comuna_filtradas.index('DESCONOCIDO')] = 'COMUNA 0'
 comuna_filtradas_numeros = [int(x.split()[1]) for x in comuna_filtradas]
 
-hechos_filtrado = hechos[hechos['COMUNA'].isin(comuna_filtradas_numeros)]
+hechos_filtrado = df_final[df_final['COMUNA'].isin(comuna_filtradas_numeros)]
 
 superior = st.columns(2) # Dos columnas superiores
 
 with superior[0]: # Columna con el pie chart
-    conteo_sexo = victimas['SEXO'].value_counts()
+    conteo_sexo = df_final['SEXO'].value_counts()
     fig = px.pie(values=conteo_sexo.values, names=conteo_sexo.index, hole=.3, title="Sexo de las víctimas")
     fig.update_layout(width=600, height=400)
     st.plotly_chart(fig)
