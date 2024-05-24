@@ -26,6 +26,19 @@ victimas_reducido = victimas_reducido.rename(columns={'ID_hecho': 'ID'})
 # Realizar la fusión en base a la columna 'ID'
 df_final = pd.merge(hechos_reducido, victimas_reducido, on='ID', how='inner')
 
+df_final['EDAD'] = pd.to_numeric(df_final['EDAD'], errors='coerce')
+
+# Creo una columna con el grupo etario
+bins = [0, 12, 18, 35, 50, 65, 100]  # Definir los rangos de edad
+labels = ['Niño', 'Adolescente', 'Joven Adulto', 'Adulto', 'Adulto Maduro', 'Adulto Mayor']  # Definir los nombres de los grupos etarios
+df_final['Grupo Etario'] = pd.cut(df_final['EDAD'], bins=bins, labels=labels, right=False)
+
+df_final = df_final.drop(columns=['EDAD'])
+
+with st.expander("Final"):
+    st.write("En este Dataset se registran los datos sobre el lugar geográfico y la hora de cada siniestro")
+    st.dataframe(df_final)
+
 #---------------------------------------------------------------------------------------------------------------------
 ### TÍTULO
 st.write("### Informe sobre siniestros viales en la ciudad de Buenos Aires") 
