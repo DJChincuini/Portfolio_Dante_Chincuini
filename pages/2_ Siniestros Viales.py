@@ -116,43 +116,40 @@ comunas = []
 for i in hechos['COMUNA']:
     if i not in comunas:
         comunas.append(i)
-    else:
-        pass
 
-comunas.sort() # Ordeno de mayor a menor las comunas.
+comunas.sort() # Ordeno las comunas.
 comunas = list(map(lambda x: f'COMUNA {str(x)}', comunas)) # Le agrego la palabra 'COMUNA' a cada opción.
 comunas = ['DESCONOCIDO' if x == 'COMUNA 0' else x for x in comunas] # Reemplazo la 'COMUNA 0' por Desconocido.
 
-
-# Creo un filtro en base a la columa 'COMUNA' del dataset 'Hechos'.
+# Creo un filtro en base a la columna 'COMUNA' del dataset 'hechos'.
 comuna_filtradas = st.multiselect(
     "FILTRAR POR COMUNA",
     comunas,
     ['COMUNA 1', 'COMUNA 2'],
-    help='Selecciona una opción')
+    help='Selecciona una opción'
+)
 
 st.write(comuna_filtradas)
 
 # Creo un dataset filtrado
-hechos_filtrado = []
-for i in comuna_filtradas:
-    pass
+if 'DESCONOCIDO' in comuna_filtradas:
+    comuna_filtradas[comuna_filtradas.index('DESCONOCIDO')] = 'COMUNA 0'
+comuna_filtradas_numeros = [int(x.split()[1]) for x in comuna_filtradas]
 
-superior= st.columns(2) # Dos columnas superiores
+hechos_filtrado = hechos[hechos['COMUNA'].isin(comuna_filtradas_numeros)]
+
+superior = st.columns(2) # Dos columnas superiores
 
 with superior[0]: # Columna con el pie chart
-    conteo = victimas['SEXO'].value_counts()
-    fig = px.pie(values=conteo.values, names=conteo.index, hole=.3, title="Sexo de las victimas")
+    conteo_sexo = victimas['SEXO'].value_counts()
+    fig = px.pie(values=conteo_sexo.values, names=conteo_sexo.index, hole=.3, title="Sexo de las víctimas")
     fig.update_layout(width=600, height=400)
     st.plotly_chart(fig)
 
-conteo = hechos_filtrado['COMUNA'].value_counts().sort_index()
-st.write(conteo)
-
 with superior[1]: # Columna del bar chart
-    conteo = hechos_filtrado['COMUNA'].value_counts().sort_index()
-    fig = px.bar(y=conteo.values, x=conteo.index, title="Siniestros por comuna")
-    fig.update_layout(yaxis_title='CONTEO',xaxis_title='COMUNA', width=600)
+    conteo_comunas = hechos_filtrado['COMUNA'].value_counts().sort_index()
+    fig = px.bar(y=conteo_comunas.values, x=conteo_comunas.index, title="Siniestros por comuna")
+    fig.update_layout(yaxis_title='CONTEO', xaxis_title='COMUNA', width=600)
     st.plotly_chart(fig)
 
 
