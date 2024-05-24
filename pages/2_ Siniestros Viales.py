@@ -3,6 +3,9 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 
+# Configuro para que el layout sea "wide"
+st.set_page_config(layout="wide")
+
 #---------------------------------------------------------------------------------------------------------------------
 # Cargo los Datasets
 hechos = pd.read_csv('./Datasets/Hechos.csv')
@@ -13,26 +16,25 @@ victimas = pd.read_csv('./Datasets/Victimas.csv')
 victimas = victimas.replace("SD",np.nan)
 hechos = hechos.replace("SD",np.nan)
 
-# Configuro para que el layout sea "wide"
-st.set_page_config(layout="wide")
-
-# Extraer las columnas deseadas
+# Creo listas con las columnas que necesito
 hechos_reducido = hechos[['ID', 'COMUNA', 'TIPO_DE_CALLE', 'AAAA', 'VICTIMA', 'ACUSADO', 'pos x', 'pos y']]
 victimas_reducido = victimas[['ID_hecho', 'SEXO', 'EDAD']]
 
-# Renombrar la columna 'ID_hecho' en victimas_reducido para que coincida con 'ID' en hechos_reducido
+# Renombro 'ID_hecho'
 victimas_reducido = victimas_reducido.rename(columns={'ID_hecho': 'ID'})
 
-# Realizar la fusión en base a la columna 'ID'
+# Merge para crear el dataset final
 df_final = pd.merge(hechos_reducido, victimas_reducido, on='ID', how='inner')
 
+# Transformo la columna 'EDAD' a numérico
 df_final['EDAD'] = pd.to_numeric(df_final['EDAD'], errors='coerce')
 
-# Creo una columna con el grupo etario
+# Creo una columna con el grupo etario en base a 'EDAD'
 bins = [0, 12, 18, 35, 50, 65, 100]  # Definir los rangos de edad
 labels = ['Niño', 'Adolescente', 'Joven Adulto', 'Adulto', 'Adulto Maduro', 'Adulto Mayor']  # Definir los nombres de los grupos etarios
-df_final['Grupo Etario'] = pd.cut(df_final['EDAD'], bins=bins, labels=labels, right=False)
+df_final['GRUPO ETARIO'] = pd.cut(df_final['EDAD'], bins=bins, labels=labels, right=False)
 
+# Elimino la columna EDAD
 df_final = df_final.drop(columns=['EDAD'])
 
 
