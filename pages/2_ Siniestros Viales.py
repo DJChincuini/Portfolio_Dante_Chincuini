@@ -35,9 +35,6 @@ df_final['Grupo Etario'] = pd.cut(df_final['EDAD'], bins=bins, labels=labels, ri
 
 df_final = df_final.drop(columns=['EDAD'])
 
-with st.expander("Final"):
-    st.write("En este Dataset se registran los datos sobre el lugar geográfico y la hora de cada siniestro")
-    st.dataframe(df_final)
 
 #---------------------------------------------------------------------------------------------------------------------
 ### TÍTULO
