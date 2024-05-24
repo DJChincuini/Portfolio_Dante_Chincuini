@@ -10,7 +10,6 @@ st.set_page_config(layout="wide")
 # Descripción
 
 st.write("## Sobre Mí")
-st.write('#')
 
 body = st.columns(2)
 
