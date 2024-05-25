@@ -167,11 +167,17 @@ with superior[0]: # Columna con el pie chart
     st.plotly_chart(fig)
 
 
-with superior[1]: # Columna del bar chart
-    conteo_comunas = hechos_filtrado['COMUNA'].value_counts().sort_index()
-    fig = px.bar(y=conteo_comunas.values, x=conteo_comunas.index, title="Siniestros por comuna")
-    fig.update_layout(yaxis_title='CONTEO', xaxis_title='COMUNA', width=600)
-    st.plotly_chart(fig)
+with superior[1]:  # Columna del bar chart
+    if comuna_filtradas is None or len(comuna_filtradas) == 0:
+        # Crear un gráfico vacío
+        fig = px.bar(title="Siniestros por comuna")
+        fig.update_layout(yaxis_title='CONTEO', xaxis_title='COMUNA', width=600)
+        st.plotly_chart(fig)
+    else:
+        conteo_comunas = hechos_filtrado['COMUNA'].value_counts().sort_index()
+        fig = px.bar(y=conteo_comunas.values, x=conteo_comunas.index, title="Siniestros por comuna")
+        fig.update_layout(yaxis_title='CONTEO', xaxis_title='COMUNA', width=600)
+        st.plotly_chart(fig)
 
 
 #---------------------------------------------------------------------------------------------------------------------
