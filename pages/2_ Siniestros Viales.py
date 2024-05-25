@@ -155,27 +155,36 @@ comuna_filtradas = st.multiselect(
     help='Selecciona una opción'
 )
 
-hechos_filtrado = df_final[df_final['COMUNA'].isin(comuna_filtradas)]
+df_filtrado_comuna = df_final[df_final['COMUNA'].isin(comuna_filtradas)]
 # ----------------------------------------------------------------------------------------------
 
 # Creo dos columnas
 superior = st.columns(2) 
 
 with superior[0]: # Columna con el pie chart
-    conteo_sexo = df_final['SEXO'].value_counts()
-    fig = px.pie(values=conteo_sexo.values, names=conteo_sexo.index, hole=.3, title="Sexo de las víctimas")
-    fig.update_layout(width=600, height=400)
-    st.plotly_chart(fig)
+    
+    
+    if comuna_filtradas is None or len(comuna_filtradas) == 0:
+        # Creao un gráfico vacío
+        fig = px.pie(title="Siniestros por comuna")
+        st.plotly_chart(fig)
+        
+    else:   
+        conteo_sexo = df_filtrado_comuna['SEXO'].value_counts()
+        fig = px.pie(values=conteo_sexo.values, names=conteo_sexo.index, hole=.3, title="Sexo de las víctimas")
+        fig.update_layout(width=600, height=400)
+        st.plotly_chart(fig)
 
 
 with superior[1]:  # Columna del bar chart
     if comuna_filtradas is None or len(comuna_filtradas) == 0:
-        # Crear un gráfico vacío
+        # Creao un gráfico vacío
         fig = px.bar(title="Siniestros por comuna")
         fig.update_layout(yaxis_title='CONTEO', xaxis_title='COMUNA', width=600)
         st.plotly_chart(fig)
+        
     else:
-        conteo_comunas = hechos_filtrado['COMUNA'].value_counts().sort_index()
+        conteo_comunas = df_filtrado_comuna['COMUNA'].value_counts().sort_index()
         fig = px.bar(y=conteo_comunas.values, x=conteo_comunas.index, title="Siniestros por comuna")
         fig.update_layout(yaxis_title='CONTEO', xaxis_title='COMUNA', width=600)
         st.plotly_chart(fig)
