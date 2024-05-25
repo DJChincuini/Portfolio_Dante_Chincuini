@@ -141,7 +141,7 @@ st.write("##")
 ### DASHBOARD
 st.write("#### Dashboard")
 
-# Agrego cada comuna a una lista.
+# Filtración por COMUNAS -----------------------------------------------------------------------
 comunas = []
 for i in df_final['COMUNA']:
     if i not in comunas:
@@ -156,9 +156,10 @@ comuna_filtradas = st.multiselect(
 )
 
 hechos_filtrado = df_final[df_final['COMUNA'].isin(comuna_filtradas)]
+# ----------------------------------------------------------------------------------------------
 
-superior = st.columns(2) # Dos columnas superiores
-
+# Creo dos columnas
+superior = st.columns(2) 
 
 with superior[0]: # Columna con el pie chart
     conteo_sexo = df_final['SEXO'].value_counts()
