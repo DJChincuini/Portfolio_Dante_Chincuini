@@ -40,6 +40,9 @@ df_final = df_final.drop(columns=['EDAD'])
 # Le agrego la palabra 'COMUNA' a cada palabra de la columna comuna.
 df_final['COMUNA'] = df_final['COMUNA'].apply(lambda x: f'COMUNA {str(x)}')
 
+ # Reemplazo la 'COMUNA 0' por Desconocido.
+df_final['COMUNA']  = df_final['COMUNA'].apply(lambda x: 'DESCONOCIDO' if x == 'COMUNA 0')
+
 
 #---------------------------------------------------------------------------------------------------------------------
 ### TÍTULO
@@ -143,8 +146,6 @@ for i in df_final['COMUNA']:
 
 comunas.sort() # Ordeno las comunas.
 
-comunas = ['DESCONOCIDO' if x == 'COMUNA 0' else x for x in comunas] # Reemplazo la 'COMUNA 0' por Desconocido.
-
 # Creo un filtro en base a la columna 'COMUNA' del dataset 'hechos'.
 comuna_filtradas = st.multiselect(
     "FILTRAR POR COMUNA",
@@ -163,11 +164,13 @@ hechos_filtrado = df_final[df_final['COMUNA'].isin(comuna_filtradas_numeros)]
 
 superior = st.columns(2) # Dos columnas superiores
 
+
 with superior[0]: # Columna con el pie chart
     conteo_sexo = df_final['SEXO'].value_counts()
     fig = px.pie(values=conteo_sexo.values, names=conteo_sexo.index, hole=.3, title="Sexo de las víctimas")
     fig.update_layout(width=600, height=400)
     st.plotly_chart(fig)
+
 
 with superior[1]: # Columna del bar chart
     conteo_comunas = hechos_filtrado['COMUNA'].value_counts().sort_index()
