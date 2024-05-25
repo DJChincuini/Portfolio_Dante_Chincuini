@@ -147,8 +147,6 @@ for i in df_final['COMUNA']:
     if i not in comunas:
         comunas.append(i)
 
-
-
 # Creo un filtro en base a la columna 'COMUNA' del dataset 'hechos'.
 comuna_filtradas = st.multiselect(
     "FILTRAR POR COMUNA",
@@ -157,13 +155,12 @@ comuna_filtradas = st.multiselect(
     help='Selecciona una opción'
 )
 
-
 # Creo un dataset filtrado
-if 'DESCONOCIDO' in comuna_filtradas:
-    comuna_filtradas[comuna_filtradas.index('DESCONOCIDO')] = 'COMUNA 0'
-comuna_filtradas_numeros = [int(x.split()[1]) for x in comuna_filtradas]
+#if 'DESCONOCIDO' in comuna_filtradas:
+#    comuna_filtradas[comuna_filtradas.index('DESCONOCIDO')] = 'COMUNA 0'
+#comuna_filtradas_numeros = [int(x.split()[1]) for x in comuna_filtradas]
 
-hechos_filtrado = df_final[df_final['COMUNA'].isin(comuna_filtradas_numeros)]
+hechos_filtrado = df_final[df_final['COMUNA'].isin(comuna_filtradas)]
 
 superior = st.columns(2) # Dos columnas superiores
 
