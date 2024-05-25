@@ -41,7 +41,7 @@ df_final = df_final.drop(columns=['EDAD'])
 df_final['COMUNA'] = df_final['COMUNA'].apply(lambda x: f'COMUNA {str(x)}')
 
  # Reemplazo la 'COMUNA 0' por Desconocido.
-df_final['COMUNA']  = df_final['COMUNA'].apply(lambda x: 'DESCONOCIDO' if x == 'COMUNA 0')
+df_final['COMUNA']  = df_final['COMUNA'].apply(lambda x: 'DESCONOCIDO' if x == 'COMUNA 0' else x)
 
 
 #---------------------------------------------------------------------------------------------------------------------
