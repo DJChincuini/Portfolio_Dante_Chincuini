@@ -37,6 +37,9 @@ df_final['GRUPO ETARIO'] = pd.cut(df_final['EDAD'], bins=bins, labels=labels, ri
 # Elimino la columna EDAD
 df_final = df_final.drop(columns=['EDAD'])
 
+# Ordeno la columna 'COMUNA'
+df_final.sort_values(by='COMUNA', inplace=True)
+
 # Le agrego la palabra 'COMUNA' a cada palabra de la columna comuna.
 df_final['COMUNA'] = df_final['COMUNA'].apply(lambda x: f'COMUNA {str(x)}')
 
@@ -144,7 +147,7 @@ for i in df_final['COMUNA']:
     if i not in comunas:
         comunas.append(i)
 
-comunas.sort() # Ordeno las comunas.
+
 
 # Creo un filtro en base a la columna 'COMUNA' del dataset 'hechos'.
 comuna_filtradas = st.multiselect(
