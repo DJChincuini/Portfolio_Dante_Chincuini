@@ -149,18 +149,35 @@ for i in df_final['COMUNA']:
         
 ## FILTROS
 
+# Columnas para los filtros.
+col1, col2 = st.columns(2)
+
+st.write('''Niño: Hasta 12 años
+         
+Adolescente: De 13 a 18 años
+         
+Joven Adulto: De 19 a 35 años
+            
+Adulto: De 36 a 50 años
+            
+Adulto Maduro: De 51 a 65 años
+            
+Adulto Mayor: Mayor de 65 años''')
+    
+# Filtro por GRUPO ETARIO
+edades_filtradas = st.multiselect(
+    "FILTRAR POR GRUPO ETARIO",
+    ['Niño', 'Adolescente', 'Joven Adulto', 'Adulto', 'Adulto Maduro', 'Adulto Mayor'],
+    ['Niño', 'Adolescente', 'Joven Adulto', 'Adulto', 'Adulto Maduro', 'Adulto Mayor']
+    )
+
 # Filtro por COMUNAS
 comuna_filtradas = st.multiselect(
     "FILTRAR POR COMUNA",
     comunas,
     ['COMUNA 1', 'COMUNA 2'],
     help='Selecciona una opción'
-)
-
-edades_filtradas = st.radio(
-    "Seleccionar grupo etario",
-    ['***Niño***', '***Adolescente***', '***Joven Adulto***', '***Adulto***', '***Adulto Maduro***', '***Adulto Mayor***'],
-    captions = ["Hasta 12 años", "De 13 a 18 años", "De 19 a 35 años", "De 36 a 50 años", "De 51 a 65 años", "Mayor de 65 años"])
+    )
 
 df_filtrado_comuna = df_final[df_final['COMUNA'].isin(comuna_filtradas)]
 
