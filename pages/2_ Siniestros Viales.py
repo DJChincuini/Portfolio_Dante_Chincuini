@@ -146,8 +146,10 @@ comunas = []
 for i in df_final['COMUNA']:
     if i not in comunas:
         comunas.append(i)
+        
+## FILTROS
 
-# Creo un filtro en base a la columna 'COMUNA' del dataset 'hechos'.
+# Filtro por COMUNAS
 comuna_filtradas = st.multiselect(
     "FILTRAR POR COMUNA",
     comunas,
@@ -156,6 +158,8 @@ comuna_filtradas = st.multiselect(
 )
 
 df_filtrado_comuna = df_final[df_final['COMUNA'].isin(comuna_filtradas)]
+
+# Filtro por grupo Etario
 # ----------------------------------------------------------------------------------------------
 
 # Creo dos columnas
@@ -181,7 +185,7 @@ with superior[1]:  # Columna del bar chart
         # Creao un gráfico vacío
         fig = px.bar(title="Siniestros por comuna")
         fig.update_layout(yaxis_title='CONTEO', xaxis_title='COMUNA', width=600)
-        st.plotly_chart(fig)
+        st.plotly_chart(fig) 
         
     else:
         conteo_comunas = df_filtrado_comuna['COMUNA'].value_counts().sort_index()
