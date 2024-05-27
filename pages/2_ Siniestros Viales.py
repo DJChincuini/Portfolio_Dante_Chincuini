@@ -152,17 +152,7 @@ for i in df_final['COMUNA']:
 # Columnas para los filtros.
 col1, col2 = st.columns(2)
 
-st.write('''Niño: Hasta 12 años
-         
-Adolescente: De 13 a 18 años
-         
-Joven Adulto: De 19 a 35 años
-            
-Adulto: De 36 a 50 años
-            
-Adulto Maduro: De 51 a 65 años
-            
-Adulto Mayor: Mayor de 65 años''')
+st.write('***Niño:*** Hasta 12 años // ***Adolescente:*** De 13 a 18 años // ***Joven Adulto:*** De 19 a 35 años // ***Adulto:*** De 36 a 50 años // ***Adulto Maduro:*** De 51 a 65 años // ***Adulto Mayor:*** Mayor de 65 años')
     
 # Filtro por GRUPO ETARIO
 edades_filtradas = st.multiselect(
