@@ -158,7 +158,7 @@ comuna_filtradas = st.multiselect(
 )
 
 edades_filtradas = st.radio(
-    "What's your favorite movie genre",
+    "Seleccionar grupo etario",
     ['***Niño***', '***Adolescente***', '***Joven Adulto***', '***Adulto***', '***Adulto Maduro***', '***Adulto Mayor***'],
     captions = ["Hasta 12 años", "De 13 a 18 años", "De 19 a 35 años", "De 36 a 50 años", "De 51 a 65 años", "Mayor de 65 años"])
 
