@@ -220,6 +220,7 @@ fig.update_layout(
     yaxis_title='Cantidad de casos'
 )
 
+fig.show()
 #---------------------------------------------------------------------------------------------------------------------
 ### ABOUT ME
 st.write("#### Sobre el autor")
