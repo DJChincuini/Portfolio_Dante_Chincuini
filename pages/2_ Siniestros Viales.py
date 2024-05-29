@@ -165,7 +165,7 @@ edades_filtradas = st.multiselect(
 comuna_filtradas = st.multiselect(
     "FILTRAR POR COMUNA",
     comunas,
-    ['COMUNA 1', 'COMUNA 2'],
+    comunas,
     help='Selecciona una opción'
     )
 
