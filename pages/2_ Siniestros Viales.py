@@ -220,7 +220,7 @@ fig.update_layout(
     yaxis_title='Cantidad de casos'
 )
 
-fig.show()
+st.plotly_chart(fig)
 #---------------------------------------------------------------------------------------------------------------------
 ### ABOUT ME
 st.write("#### Sobre el autor")
