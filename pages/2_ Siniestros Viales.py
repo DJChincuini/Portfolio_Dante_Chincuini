@@ -173,6 +173,10 @@ comuna_filtradas = st.multiselect(
 df_filtrado = df_final[(df_final['COMUNA'].isin(comuna_filtradas)) & (df_final['GRUPO ETARIO'].isin(edades_filtradas))]
 
 # ----------------------------------------------------------------------------------------------
+x = 
+st.write(f"Cantidad de casos totales: {x}")
+
+
 # Creo dos columnas
 superior = st.columns(2) 
 
@@ -218,7 +222,7 @@ fig.add_trace(go.Scatter(x=conteo_por_año.index, y=conteo_por_año.values, mode
 fig.update_layout(
     title='Cantidad de casos por año',
     xaxis_title='Año',
-    yaxis_title='Cantidad de casos',
+    yaxis_title='Cantidad de casos'    
 )
 
 st.plotly_chart(fig,use_container_width=True)
