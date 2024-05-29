@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.express as px
+import plotly.graph_objects as go
 
 # Configuro para que el layout sea "wide"
 st.set_page_config(layout="wide")
@@ -203,6 +204,21 @@ with superior[1]:  # Columna del bar chart
         fig.update_layout(yaxis_title='CONTEO', xaxis_title='COMUNA', width=600)
         st.plotly_chart(fig)
 
+# Creo un slider para seleccionar los años
+fig = go.Figure()
+
+# Creo una lista que contenga todos los años y la cantidad de casos en esos años
+conteo_por_año = df_filtrado['AAAA'].value_counts().sort_index()
+
+# Creo el gráfico
+fig.add_trace(go.Scatter(x=conteo_por_año.index, y=conteo_por_año.values, mode='lines+markers'))
+
+# Etiquetas
+fig.update_layout(
+    title='Cantidad de casos por año',
+    xaxis_title='Año',
+    yaxis_title='Cantidad de casos'
+)
 
 #---------------------------------------------------------------------------------------------------------------------
 ### ABOUT ME
