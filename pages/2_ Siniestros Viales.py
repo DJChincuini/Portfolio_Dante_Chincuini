@@ -173,7 +173,7 @@ comuna_filtradas = st.multiselect(
 df_filtrado = df_final[(df_final['COMUNA'].isin(comuna_filtradas)) & (df_final['GRUPO ETARIO'].isin(edades_filtradas))]
 
 # ----------------------------------------------------------------------------------------------
-x = 
+x = df_filtrado['AAAA'].value_counts()
 st.write(f"Cantidad de casos totales: {x}")
 
 
