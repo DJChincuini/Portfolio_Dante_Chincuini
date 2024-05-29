@@ -174,7 +174,7 @@ df_filtrado = df_final[(df_final['COMUNA'].isin(comuna_filtradas)) & (df_final['
 
 # ----------------------------------------------------------------------------------------------
 x = len(df_filtrado)
-st.write(f"Cantidad de casos totales: {x}")
+st.write(f"Cantidad de casos: {x}")
 
 
 # Creo dos columnas
