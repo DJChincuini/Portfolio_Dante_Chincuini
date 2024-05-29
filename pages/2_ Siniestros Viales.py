@@ -204,6 +204,7 @@ with superior[1]:  # Columna del bar chart
         fig.update_layout(yaxis_title='CONTEO', xaxis_title='COMUNA', width=600)
         st.plotly_chart(fig)
 
+
 # Creo un slider para seleccionar los años
 fig = go.Figure()
 
@@ -217,7 +218,8 @@ fig.add_trace(go.Scatter(x=conteo_por_año.index, y=conteo_por_año.values, mode
 fig.update_layout(
     title='Cantidad de casos por año',
     xaxis_title='Año',
-    yaxis_title='Cantidad de casos'
+    yaxis_title='Cantidad de casos',
+    width=1200  
 )
 
 st.plotly_chart(fig)
