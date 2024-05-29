@@ -219,10 +219,9 @@ fig.update_layout(
     title='Cantidad de casos por año',
     xaxis_title='Año',
     yaxis_title='Cantidad de casos',
-    width=1200  
 )
 
-st.plotly_chart(fig)
+st.plotly_chart(fig,use_container_width=True)
 #---------------------------------------------------------------------------------------------------------------------
 ### ABOUT ME
 st.write("#### Sobre el autor")
