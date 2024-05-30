@@ -142,25 +142,35 @@ st.write("##")
 ### DASHBOARD
 st.write("#### Dashboard")
 
-# Filtración por COMUNAS -----------------------------------------------------------------------
-comunas = []
-for i in df_final['COMUNA']:
-    if i not in comunas:
-        comunas.append(i)
-        
+       
 ## FILTROS
 
 # Columnas para los filtros.
 col1, col2 = st.columns(2)
 
+# Filtro por AÑO
+años_filtradas = st.multiselect(
+    "FILTRAR POR AÑO",
+    ['Niño', 'Adolescente', 'Joven Adulto', 'Adulto', 'Adulto Maduro', 'Adulto Mayor'],
+    ['Niño', 'Adolescente', 'Joven Adulto', 'Adulto', 'Adulto Maduro', 'Adulto Mayor']
+    )
+
+# Filtración por GRUPO ETARIO ------------------------------------------------------------------
 st.write('***Niño:*** Hasta 12 años // ***Adolescente:*** De 13 a 18 años // ***Joven Adulto:*** De 19 a 35 años // ***Adulto:*** De 36 a 50 años // ***Adulto Maduro:*** De 51 a 65 años // ***Adulto Mayor:*** Mayor de 65 años')
-    
+
 # Filtro por GRUPO ETARIO
 edades_filtradas = st.multiselect(
     "FILTRAR POR GRUPO ETARIO",
     ['Niño', 'Adolescente', 'Joven Adulto', 'Adulto', 'Adulto Maduro', 'Adulto Mayor'],
     ['Niño', 'Adolescente', 'Joven Adulto', 'Adulto', 'Adulto Maduro', 'Adulto Mayor']
     )
+
+# Filtración por COMUNAS -----------------------------------------------------------------------
+comunas = []
+for i in df_final['COMUNA']:
+    if i not in comunas:
+        comunas.append(i)
+ 
 
 # Filtro por COMUNAS
 comuna_filtradas = st.multiselect(
