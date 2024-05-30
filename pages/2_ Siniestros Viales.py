@@ -145,8 +145,10 @@ st.write("#### Dashboard")
        
 ## FILTROS
 
-# Columnas para los filtros.
-col1, col2 = st.columns(2)
+comunas = []
+for i in df_final['COMUNA']:
+    if i not in comunas:
+        comunas.append(i)
 
 # Filtro por AÑO
 años_filtradas = st.multiselect(
@@ -170,7 +172,6 @@ comunas = []
 for i in df_final['COMUNA']:
     if i not in comunas:
         comunas.append(i)
- 
 
 # Filtro por COMUNAS
 comuna_filtradas = st.multiselect(
