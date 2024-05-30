@@ -150,6 +150,8 @@ for i in df_final['AAAA']:
     if i not in años:
         años.append(i)
 
+años.sort()
+
 # Filtro por AÑO
 años_filtradas = st.multiselect(
     "FILTRAR POR AÑO",
