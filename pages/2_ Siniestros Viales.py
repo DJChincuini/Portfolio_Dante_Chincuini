@@ -144,12 +144,13 @@ st.write("#### Dashboard")
 
        
 ## FILTROS
-
+# Creo una lista para almacenar los años
 años = []
 for i in df_final['AAAA']:
     if i not in años:
         años.append(i)
 
+# Ordeno la lista
 años.sort()
 
 # Filtro por AÑO
