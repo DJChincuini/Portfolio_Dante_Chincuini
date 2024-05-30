@@ -154,8 +154,7 @@ for i in df_final['AAAA']:
 años_filtradas = st.multiselect(
     "FILTRAR POR AÑO",
     años,
-    años
-    )
+    años)
 
 # Filtración por GRUPO ETARIO ------------------------------------------------------------------
 st.write('***Niño:*** Hasta 12 años // ***Adolescente:*** De 13 a 18 años // ***Joven Adulto:*** De 19 a 35 años // ***Adulto:*** De 36 a 50 años // ***Adulto Maduro:*** De 51 a 65 años // ***Adulto Mayor:*** Mayor de 65 años')
