@@ -184,7 +184,7 @@ comuna_filtradas = st.multiselect(
     help='Selecciona una opción'
     )
 
-df_filtrado = df_final[(df_final['COMUNA'].isin(comuna_filtradas)) & (df_final['GRUPO ETARIO'].isin(edades_filtradas))]
+df_filtrado = df_final[(df_final['COMUNA'].isin(comuna_filtradas)) & (df_final['GRUPO ETARIO'].isin(edades_filtradas) & (df_final['AAAA'].isin(años_filtradas)))]
 
 # ----------------------------------------------------------------------------------------------
 st.write('####')
