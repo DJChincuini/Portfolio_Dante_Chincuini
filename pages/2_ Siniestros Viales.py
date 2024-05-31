@@ -47,8 +47,8 @@ df_final['COMUNA'] = df_final['COMUNA'].apply(lambda x: f'COMUNA {str(x)}')
  # Reemplazo la 'COMUNA 0' por Desconocido.
 df_final['COMUNA']  = df_final['COMUNA'].apply(lambda x: 'DESCONOCIDO' if x == 'COMUNA 0' else x)
 
-df_final['pos x'] = df_final['pos x'].str.replace('.',',').astype(float) #Transformo los dato para la columna X
-df_final['pos y'] = df_final['pos y'].str.replace('.',',').astype(float)
+df_final['pos x'] = df_final['pos x'].str.replace('.',',').astype(float) # Transformo los datos para la columna X
+df_final['pos y'] = df_final['pos y'].str.replace('.',',').astype(float) # Transformo los datos para la columna Y
 
 
 #---------------------------------------------------------------------------------------------------------------------
