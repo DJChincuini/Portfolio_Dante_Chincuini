@@ -257,7 +257,11 @@ fig.update_layout(
 st.plotly_chart(fig,use_container_width=True)
 
 # Creo un mapbox
-px.set_mapbox_access_token("pk.eyJ1IjoiYmlsbHlyZXltZWwiLCJhIjoiY2x3eDBqM2F6MTh5ODJpcTRwZWdpcDZ1cSJ9.ZM-dxJ-uBV4JU8w4hjMzLg")
+# Leer el contenido completo del archivo
+with open('mapbox_token.txt', 'r') as file:
+    token = file.read()
+
+px.set_mapbox_access_token(token)
 
 fig = px.scatter_mapbox(
     df_filtrado,
