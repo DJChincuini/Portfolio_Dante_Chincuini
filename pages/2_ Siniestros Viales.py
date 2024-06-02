@@ -47,6 +47,7 @@ df_final['COMUNA'] = df_final['COMUNA'].apply(lambda x: f'COMUNA {str(x)}')
  # Reemplazo la 'COMUNA 0' por Desconocido.
 df_final['COMUNA']  = df_final['COMUNA'].apply(lambda x: 'DESCONOCIDO' if x == 'COMUNA 0' else x)
 
+# Creo una función para limpiar las columnas 'pos x' y 'pos y'
 def limpiar_y_convertir(columna):
     # Eliminar espacios y valores no numéricos que consisten solo en '.'
     columna = columna.str.strip().replace('.', '')
@@ -56,7 +57,6 @@ def limpiar_y_convertir(columna):
 
 df_final['pos y'] = limpiar_y_convertir(df_final['pos y'])
 df_final['pos x'] = limpiar_y_convertir(df_final['pos x'])
-
 
 #---------------------------------------------------------------------------------------------------------------------
 ### TÍTULO
