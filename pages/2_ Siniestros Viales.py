@@ -63,7 +63,7 @@ df_final['pos x'] = limpiar_y_convertir(df_final['pos x'])
 df_final['HH'] = df_final['HH'].fillna(0)
 
 # Transformo los valores a flotantes
-df_final['HH'] = df_final['HH'].astype(float)
+df_final['HH'] = df_final['HH'].astype(int)
 #---------------------------------------------------------------------------------------------------------------------
 ### TÍTULO
 st.write("### Informe sobre siniestros viales en la ciudad de Buenos Aires") 
