@@ -256,7 +256,7 @@ st.plotly_chart(fig,use_container_width=True)
 
 fig = px.scatter_mapbox(df_filtrado, lat="pos y", lon="pos x",
                         color_continuous_scale=px.colors.cyclical.IceFire, size_max=15, zoom=10)
-fig.show()
+st.plotly_chart(fig)
 #---------------------------------------------------------------------------------------------------------------------
 ### ABOUT ME
 st.write("#### Sobre el autor")
