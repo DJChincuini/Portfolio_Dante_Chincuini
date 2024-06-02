@@ -18,7 +18,7 @@ victimas = victimas.replace("SD",np.nan)
 hechos = hechos.replace("SD",np.nan)
 
 # Creo listas con las columnas que necesito
-hechos_reducido = hechos[['ID', 'COMUNA', 'TIPO_DE_CALLE', 'AAAA', 'VICTIMA', 'ACUSADO', 'pos x', 'pos y']]
+hechos_reducido = hechos[['ID', 'COMUNA', 'TIPO_DE_CALLE', 'AAAA','HH', 'VICTIMA', 'ACUSADO', 'pos x', 'pos y']]
 victimas_reducido = victimas[['ID_hecho', 'SEXO', 'EDAD']]
 
 # Renombro 'ID_hecho'
@@ -254,7 +254,7 @@ st.plotly_chart(fig,use_container_width=True)
 
 #px.set_mapbox_access_token(open(".mapbox_token").read())
 
-fig = px.scatter_mapbox(df_filtrado, lat="pos y", lon="pos x",
+fig = px.scatter_mapbox(df_filtrado, lat="pos y", lon="pos x",color="HH",size="HH",
                         color_continuous_scale=px.colors.cyclical.IceFire, size_max=15, zoom=10)
 st.plotly_chart(fig)
 #---------------------------------------------------------------------------------------------------------------------
