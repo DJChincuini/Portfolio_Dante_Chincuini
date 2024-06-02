@@ -55,6 +55,7 @@ def limpiar_y_convertir(columna):
     columna = pd.to_numeric(columna, errors='coerce')
     return columna
 
+# Aplico la función a las columnas
 df_final['pos y'] = limpiar_y_convertir(df_final['pos y'])
 df_final['pos x'] = limpiar_y_convertir(df_final['pos x'])
 
