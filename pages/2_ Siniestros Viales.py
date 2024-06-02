@@ -254,12 +254,10 @@ fig.update_layout(
     xaxis_title='Año',
     yaxis_title='Cantidad de casos'    
 )
-
 st.plotly_chart(fig,use_container_width=True)
 
-#px.set_mapbox_access_token(open(".mapbox_token").read())
-
-fig = px.scatter_mapbox(df_filtrado, lat="pos y", lon="pos x",color="HH",size="HH",
+# Creo un mapbox
+fig = px.scatter_mapbox(df_filtrado, lat="pos y", lon="pos x",color="HH",
                         color_continuous_scale=px.colors.cyclical.IceFire, size_max=15, zoom=10)
 st.plotly_chart(fig)
 #---------------------------------------------------------------------------------------------------------------------
