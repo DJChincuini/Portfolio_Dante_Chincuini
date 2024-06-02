@@ -59,6 +59,10 @@ def limpiar_y_convertir(columna):
 df_final['pos y'] = limpiar_y_convertir(df_final['pos y'])
 df_final['pos x'] = limpiar_y_convertir(df_final['pos x'])
 
+# Cambio los valores nulos a 0
+df_final['HH'] = df_final['HH'].fillna(0)
+
+df_final['HH'] = df_final['HH'].astype(float)
 #---------------------------------------------------------------------------------------------------------------------
 ### TÍTULO
 st.write("### Informe sobre siniestros viales en la ciudad de Buenos Aires") 
