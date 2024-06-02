@@ -62,6 +62,7 @@ df_final['pos x'] = limpiar_y_convertir(df_final['pos x'])
 # Cambio los valores nulos a 0
 df_final['HH'] = df_final['HH'].fillna(0)
 
+# Transformo los valores a flotantes
 df_final['HH'] = df_final['HH'].astype(float)
 #---------------------------------------------------------------------------------------------------------------------
 ### TÍTULO
