@@ -1,1 +1,1 @@
-/mapbox_token.txt/
+/pages/mapbox_token.txt
