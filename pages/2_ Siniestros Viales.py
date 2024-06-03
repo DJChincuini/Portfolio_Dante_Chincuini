@@ -259,26 +259,30 @@ fig.update_layout(
 )
 st.plotly_chart(fig,use_container_width=True)
 
-# Creo un mapbox
-# Leo el token del mapbox
-with open('mapbox_token.txt', 'r') as file:
-    token = file.read()
 
-# Le doy acceso para setear un mapbox
-px.set_mapbox_access_token(token)
+inferior = st.columns(2)
 
-# Creo el gráfico
-fig = px.scatter_mapbox(
-    df_filtrado,
-    lat="pos y",
-    lon="pos x",
-    color='HH',
-    color_continuous_scale=px.colors.cyclical.IceFire,
-    size_max=15,
-    zoom=10
-    )
-# Muestro el gráfico
-st.plotly_chart(fig,use_container_width=True)
+with inferior[0]:
+    ## MAPBOX
+    # Leo el token del mapbox
+    with open('mapbox_token.txt', 'r') as file:
+        token = file.read()
+
+    # Le doy acceso para setear un mapbox
+    px.set_mapbox_access_token(token)
+
+    # Creo el gráfico
+    fig = px.scatter_mapbox(
+        df_filtrado,
+        lat="pos y",
+        lon="pos x",
+        color='HH',
+        color_continuous_scale=px.colors.cyclical.IceFire,
+        size_max=15,
+        zoom=10
+        )
+    # Muestro el gráfico
+    st.plotly_chart(fig,use_container_width=True)
 
 #---------------------------------------------------------------------------------------------------------------------
 ### ABOUT ME
