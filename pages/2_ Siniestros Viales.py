@@ -65,7 +65,6 @@ df_final['HH'] = df_final['HH'].fillna(0)
 df_final['HH'] = df_final['HH'].astype(int)
 
 # Creo una columna con semestres
-#df_final['MM'] = pd.to_numeric(df_final['MM'], errors='coerce')
 df_final['SEMESTRE'] = df_final['MM'].apply(lambda x: 'Primer Semestre' if x <= 6 else 'Segundo Semestre')
 #---------------------------------------------------------------------------------------------------------------------
 ### TÍTULO
