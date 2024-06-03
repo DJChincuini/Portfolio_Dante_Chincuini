@@ -259,7 +259,6 @@ fig.update_layout(
 )
 st.plotly_chart(fig,use_container_width=True)
 
-
 inferior = st.columns(2)
 
 with inferior[0]:
