@@ -18,7 +18,7 @@ victimas = victimas.replace("SD",np.nan)
 hechos = hechos.replace("SD",np.nan)
 
 # Creo listas con las columnas que necesito
-hechos_reducido = hechos[['ID', 'COMUNA', 'TIPO_DE_CALLE', 'AAAA','HH', 'VICTIMA', 'ACUSADO', 'pos x', 'pos y']]
+hechos_reducido = hechos[['ID', 'COMUNA', 'TIPO_DE_CALLE', 'AAAA','MM','HH', 'VICTIMA', 'ACUSADO', 'pos x', 'pos y']]
 victimas_reducido = victimas[['ID_hecho', 'SEXO', 'EDAD']]
 
 # Renombro 'ID_hecho'
@@ -63,6 +63,10 @@ df_final['pos x'] = limpiar_y_convertir(df_final['pos x'])
 df_final['HH'] = df_final['HH'].fillna(0)
 # Transformo los valores a flotantes
 df_final['HH'] = df_final['HH'].astype(int)
+
+# Creo una columna con semestres
+#df_final['MM'] = pd.to_numeric(df_final['MM'], errors='coerce')
+df_final['SEMESTRE'] = df_final['MM'].apply(lambda x: 'Primer Semestre' if x <= 6 else 'Segundo Semestre')
 #---------------------------------------------------------------------------------------------------------------------
 ### TÍTULO
 st.write("### Informe sobre siniestros viales en la ciudad de Buenos Aires") 
