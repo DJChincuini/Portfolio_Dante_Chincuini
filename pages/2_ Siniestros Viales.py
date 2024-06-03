@@ -275,7 +275,7 @@ fig = px.scatter_mapbox(
     zoom=10
     )
 # Muestro el gráfico
-st.plotly_chart(fig)
+st.plotly_chart(fig,use_container_width=True)
 
 #---------------------------------------------------------------------------------------------------------------------
 ### ABOUT ME
