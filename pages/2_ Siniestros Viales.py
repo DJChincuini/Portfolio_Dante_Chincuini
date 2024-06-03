@@ -283,6 +283,11 @@ with inferior[0]:
         )
     # Muestro el gráfico
     st.plotly_chart(fig,use_container_width=True)
+    
+with inferior[1]:
+    # Barplot
+    fig = px.bar(df_final, x='AAAA', y=df_final.index, color='SEMESTRE')
+    st.plotly_chart(fig, use_container_width=True)
 
 #---------------------------------------------------------------------------------------------------------------------
 ### ABOUT ME
