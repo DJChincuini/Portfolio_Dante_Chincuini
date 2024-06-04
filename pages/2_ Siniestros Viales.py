@@ -224,8 +224,17 @@ with superior[0]: # Columna con el pie chart
         
     else:   
         conteo_sexo = df_filtrado['SEXO'].value_counts()
-        fig = px.pie(values=conteo_sexo.values, names=conteo_sexo.index, hole=.3, title="Sexo de las víctimas")
-        fig.update_layout(width=600, height=400)
+        
+        fig = px.pie(
+            values=conteo_sexo.values,
+            names=conteo_sexo.index,
+            hole=.3,
+            title="Sexo de las víctimas")
+        
+        fig.update_layout(
+            width=600,
+            height=400)
+        
         st.plotly_chart(fig)
 
 
