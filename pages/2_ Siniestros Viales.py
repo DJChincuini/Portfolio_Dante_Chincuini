@@ -231,15 +231,30 @@ with superior[0]: # Columna con el pie chart
 
 with superior[1]:  # Columna del bar chart
     if df_filtrado is None or len(df_filtrado) == 0:
+        
         # Creao un gráfico vacío
         fig = px.bar(title="Siniestros por comuna")
-        fig.update_layout(yaxis_title='CONTEO', xaxis_title='COMUNA', width=600)
+        
+        fig.update_layout(
+            yaxis_title='CONTEO',
+            xaxis_title='COMUNA',
+            width=600)
+        
         st.plotly_chart(fig) 
         
     else:
         conteo_comunas = df_filtrado['COMUNA'].value_counts().sort_index()
-        fig = px.bar(y=conteo_comunas.values, x=conteo_comunas.index, title="Siniestros por comuna")
-        fig.update_layout(yaxis_title='CONTEO', xaxis_title='COMUNA', width=600)
+        
+        fig = px.bar(
+            y=conteo_comunas.values,
+            x=conteo_comunas.index,
+            title="Siniestros por comuna")
+        
+        fig.update_layout(
+            yaxis_title='CONTEO',
+            xaxis_title='COMUNA',
+            width=600)
+        
         st.plotly_chart(fig)
 
 
