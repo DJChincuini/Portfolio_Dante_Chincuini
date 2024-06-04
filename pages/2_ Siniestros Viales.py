@@ -214,36 +214,54 @@ df_filtrado = df_final[(df_final['COMUNA'].isin(comuna_filtradas)) & (df_final['
 
 # ----------------------------------------------------------------------------------------------
 
-
 st.write('####')
 x = len(df_filtrado)
 st.write(f"Cantidad de casos: {x}")
 
 
+fig = go.Figure() # Scatter Plot ----------------------------------------------------------------------------------------
+
+# Creo una lista que contenga todos los años y la cantidad de casos en esos años
+conteo_por_año = df_filtrado['AAAA'].value_counts().sort_index()
+
+# Creo el gráfico
+fig.add_trace(go.Scatter(x=conteo_por_año.index, y=conteo_por_año.values, mode='lines+markers'))
+
+# Etiquetas
+fig.update_layout(
+    title='Cantidad de casos por año',
+    xaxis_title='Año',
+    yaxis_title='Cantidad de casos'    
+)
+st.plotly_chart(fig,use_container_width=True)
+
+
 # Creo dos columnas
 superior = st.columns(2) 
 
-with superior[0]: # Pie Chart ----------------------------------------------------------------------------------------------
+with superior[0]: # Map Plot ----------------------------------------------------------------------------------------------
+
+    # Leo el token del map plot
+    with open('mapbox_token.txt', 'r') as file:
+        token = file.read()
+
+    # Le doy acceso para setear un map plot
+    px.set_mapbox_access_token(token)
+
+    # Creo el gráfico
+    fig = px.scatter_mapbox(
+        df_filtrado,
+        lat="pos y",
+        lon="pos x",
+        color='HH',
+        color_continuous_scale=px.colors.cyclical.IceFire,
+        size_max=15,
+        zoom=10,
+        title='Lugares de los siniestros'
+        )
     
-    if df_filtrado is None or len(df_filtrado) == 0:
-        # Creo un gráfico vacío
-        fig = px.pie(title="Siniestros por comuna")
-        st.plotly_chart(fig)
-        
-    else:   
-        conteo_sexo = df_filtrado['SEXO'].value_counts()
-        
-        fig = px.pie(
-            values=conteo_sexo.values,
-            names=conteo_sexo.index,
-            hole=.3,
-            title="Sexo de las víctimas")
-        
-        fig.update_layout(
-            width=600,
-            height=400)
-        
-        st.plotly_chart(fig)
+    # Muestro el gráfico
+    st.plotly_chart(fig,use_container_width=True)
 
 
 with superior[1]: # Bar Chart ------------------------------------------------------------------------------------------
@@ -275,46 +293,30 @@ with superior[1]: # Bar Chart --------------------------------------------------
         st.plotly_chart(fig)
 
 
-fig = go.Figure() # Scatter Plot ----------------------------------------------------------------------------------------
-
-# Creo una lista que contenga todos los años y la cantidad de casos en esos años
-conteo_por_año = df_filtrado['AAAA'].value_counts().sort_index()
-
-# Creo el gráfico
-fig.add_trace(go.Scatter(x=conteo_por_año.index, y=conteo_por_año.values, mode='lines+markers'))
-
-# Etiquetas
-fig.update_layout(
-    title='Cantidad de casos por año',
-    xaxis_title='Año',
-    yaxis_title='Cantidad de casos'    
-)
-st.plotly_chart(fig,use_container_width=True)
 
 inferior = st.columns(2)
 
-with inferior[0]: # Map Plot -------------------------------------------------------------------------------------------
-
-    # Leo el token del map plot
-    with open('mapbox_token.txt', 'r') as file:
-        token = file.read()
-
-    # Le doy acceso para setear un map plot
-    px.set_mapbox_access_token(token)
-
-    # Creo el gráfico
-    fig = px.scatter_mapbox(
-        df_filtrado,
-        lat="pos y",
-        lon="pos x",
-        color='HH',
-        color_continuous_scale=px.colors.cyclical.IceFire,
-        size_max=15,
-        zoom=10,
-        title='Lugares de los siniestros'
-        )
-    # Muestro el gráfico
-    st.plotly_chart(fig,use_container_width=True)
+with inferior[0]: # Pie Plot -------------------------------------------------------------------------------------------
+    
+    if df_filtrado is None or len(df_filtrado) == 0:
+        # Creo un gráfico vacío
+        fig = px.pie(title="Siniestros por comuna")
+        st.plotly_chart(fig)
+        
+    else:   
+        conteo_sexo = df_filtrado['SEXO'].value_counts()
+        
+        fig = px.pie(
+            values=conteo_sexo.values,
+            names=conteo_sexo.index,
+            hole=.3,
+            title="Sexo de las víctimas")
+        
+        fig.update_layout(
+            width=600,
+            height=400)
+        
+        st.plotly_chart(fig)
   
    
 with inferior[1]: # Bar Plot -------------------------------------------------------------------------------------------
