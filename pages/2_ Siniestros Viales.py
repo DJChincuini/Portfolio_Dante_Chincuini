@@ -217,6 +217,8 @@ st.write('####')
 x = len(df_filtrado)
 st.write(f"Cantidad de casos: {x}")
 
+
+
 fig = go.Figure() # Scatter Plot ----------------------------------------------------------------------------------------
 
 # Creo una lista que contenga todos los años y la cantidad de casos en esos años
@@ -232,6 +234,7 @@ fig.update_layout(
     yaxis_title='Cantidad de casos'    
 )
 st.plotly_chart(fig,use_container_width=True)
+
 
 
 # Creo dos columnas
@@ -292,6 +295,7 @@ with superior[1]: # Bar Chart --------------------------------------------------
 
 
 
+# Creo dos columnas
 inferior = st.columns(2)
 
 with inferior[0]: # Pie Plot -------------------------------------------------------------------------------------------
@@ -326,6 +330,8 @@ with inferior[1]: # Bar Plot ---------------------------------------------------
         title='Casos por semestres a lo largo de los años')
     
     st.plotly_chart(fig, use_container_width=True)
+
+
 
 #---------------------------------------------------------------------------------------------------------------------
 ### ABOUT ME
