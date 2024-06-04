@@ -67,6 +67,9 @@ df_final['HH'] = df_final['HH'].astype(int)
 # Creo dos columnas para los semestres
 df_final['SEM_1'] = df_final['MM'].apply(lambda x: 1 if x <= 6 else 0)
 df_final['SEM_2'] = df_final['MM'].apply(lambda x: 0 if x <= 6 else 1)
+
+# Cambio los valores nulos por 'SIN DATO'
+df_final['VICTIMA'] = df_final['VICTIMA'].fillna('DESCONOCIDO')
 #---------------------------------------------------------------------------------------------------------------------
 ### TÍTULO
 st.write("### Informe sobre siniestros viales en la ciudad de Buenos Aires") 
@@ -178,19 +181,6 @@ años_filtradas = st.multiselect(
     "FILTRAR POR AÑO",
     años,
     años)
-
-
-# Filtración por AÑO --------------------------------------------------------------------------
-vehículos = []
-for i in df_final['ACUSADO']:
-    if i not in vehículos:
-        vehículos.append(i)
-        
-vehículos_filtrados = st.multiselect(
-    "FILTRAR POR VEHÍCULO",
-    vehículos,
-    vehículos
-    )
         
 
 # Filtración por COMUNAS -----------------------------------------------------------------------
