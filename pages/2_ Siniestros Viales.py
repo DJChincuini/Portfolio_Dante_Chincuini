@@ -64,8 +64,9 @@ df_final['HH'] = df_final['HH'].fillna(0)
 # Transformo los valores a flotantes
 df_final['HH'] = df_final['HH'].astype(int)
 
-# Creo una columna con semestres
-df_final['SEMESTRE'] = df_final['MM'].apply(lambda x: 'Primer Semestre' if x <= 6 else 'Segundo Semestre')
+# Creo dos columnas para los semestres
+df_final['SEM_1'] = df_final['MM'].apply(lambda x: 1 if x <= 6 else 0)
+df_final['SEM_2'] = df_final['MM'].apply(lambda x: 0 if x <= 6 else 1)
 #---------------------------------------------------------------------------------------------------------------------
 ### TÍTULO
 st.write("### Informe sobre siniestros viales en la ciudad de Buenos Aires") 
@@ -278,18 +279,20 @@ with inferior[0]:
         color='HH',
         color_continuous_scale=px.colors.cyclical.IceFire,
         size_max=15,
-        zoom=10
+        zoom=10,
+        title='Lugares de los siniestros'
         )
     # Muestro el gráfico
     st.plotly_chart(fig,use_container_width=True)
-    
+  
+# Barplot  
 with inferior[1]:
-    # Barplot
+    
     fig = px.bar(
-        df_final,
+        df_filtrado,
         x='AAAA',
-        y=df_final.index,
-        color='SEMESTRE')
+        y=['SEM_1','SEM_2'],
+        title='Casos por semestres a lo largo de los años')
     
     st.plotly_chart(fig, use_container_width=True)
 
