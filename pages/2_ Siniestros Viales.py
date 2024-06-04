@@ -179,16 +179,6 @@ años_filtradas = st.multiselect(
     años,
     años)
 
-# Filtración por GRUPO ETARIO ------------------------------------------------------------------
-st.write('***Niño:*** Hasta 12 años // ***Adolescente:*** De 13 a 18 años // ***Joven Adulto:*** De 19 a 35 años // ***Adulto:*** De 36 a 50 años // ***Adulto Maduro:*** De 51 a 65 años // ***Adulto Mayor:*** Mayor de 65 años')
-
-# Filtro por GRUPO ETARIO
-edades_filtradas = st.multiselect(
-    "FILTRAR POR GRUPO ETARIO",
-    ['Niño', 'Adolescente', 'Joven Adulto', 'Adulto', 'Adulto Maduro', 'Adulto Mayor'],
-    ['Niño', 'Adolescente', 'Joven Adulto', 'Adulto', 'Adulto Maduro', 'Adulto Mayor']
-    )
-
 # Filtración por COMUNAS -----------------------------------------------------------------------
 comunas = []
 for i in df_final['COMUNA']:
@@ -203,9 +193,23 @@ comuna_filtradas = st.multiselect(
     help='Selecciona una opción'
     )
 
+# Filtración por GRUPO ETARIO ------------------------------------------------------------------
+st.write('***Niño:*** Hasta 12 años // ***Adolescente:*** De 13 a 18 años // ***Joven Adulto:*** De 19 a 35 años // ***Adulto:*** De 36 a 50 años // ***Adulto Maduro:*** De 51 a 65 años // ***Adulto Mayor:*** Mayor de 65 años')
+
+# Filtro por GRUPO ETARIO
+edades_filtradas = st.multiselect(
+    "FILTRAR POR GRUPO ETARIO",
+    ['Niño', 'Adolescente', 'Joven Adulto', 'Adulto', 'Adulto Maduro', 'Adulto Mayor'],
+    ['Niño', 'Adolescente', 'Joven Adulto', 'Adulto', 'Adulto Maduro', 'Adulto Mayor']
+    )
+
+
+### DATAFRAME FILTRADO ###
 df_filtrado = df_final[(df_final['COMUNA'].isin(comuna_filtradas)) & (df_final['GRUPO ETARIO'].isin(edades_filtradas) & (df_final['AAAA'].isin(años_filtradas)))]
 
 # ----------------------------------------------------------------------------------------------
+
+
 st.write('####')
 x = len(df_filtrado)
 st.write(f"Cantidad de casos: {x}")
@@ -214,11 +218,10 @@ st.write(f"Cantidad de casos: {x}")
 # Creo dos columnas
 superior = st.columns(2) 
 
-with superior[0]: # Columna con el pie chart
-    
+with superior[0]: # Pie Chart ----------------------------------------------------------------------------------------------
     
     if df_filtrado is None or len(df_filtrado) == 0:
-        # Creao un gráfico vacío
+        # Creo un gráfico vacío
         fig = px.pie(title="Siniestros por comuna")
         st.plotly_chart(fig)
         
@@ -238,10 +241,10 @@ with superior[0]: # Columna con el pie chart
         st.plotly_chart(fig)
 
 
-with superior[1]:  # Columna del bar chart
+with superior[1]: # Bar Chart ------------------------------------------------------------------------------------------
     if df_filtrado is None or len(df_filtrado) == 0:
         
-        # Creao un gráfico vacío
+        # Creo un gráfico vacío
         fig = px.bar(title="Siniestros por comuna")
         
         fig.update_layout(
@@ -267,8 +270,7 @@ with superior[1]:  # Columna del bar chart
         st.plotly_chart(fig)
 
 
-# Creo un slider para seleccionar los años
-fig = go.Figure()
+fig = go.Figure() # Scatter Plot ----------------------------------------------------------------------------------------
 
 # Creo una lista que contenga todos los años y la cantidad de casos en esos años
 conteo_por_año = df_filtrado['AAAA'].value_counts().sort_index()
@@ -286,13 +288,13 @@ st.plotly_chart(fig,use_container_width=True)
 
 inferior = st.columns(2)
 
-with inferior[0]:
-    ## MAPBOX
-    # Leo el token del mapbox
+with inferior[0]: # Map Plot -------------------------------------------------------------------------------------------
+
+    # Leo el token del map plot
     with open('mapbox_token.txt', 'r') as file:
         token = file.read()
 
-    # Le doy acceso para setear un mapbox
+    # Le doy acceso para setear un map plot
     px.set_mapbox_access_token(token)
 
     # Creo el gráfico
@@ -309,8 +311,8 @@ with inferior[0]:
     # Muestro el gráfico
     st.plotly_chart(fig,use_container_width=True)
   
-# Barplot  
-with inferior[1]:
+   
+with inferior[1]: # Bar Plot -------------------------------------------------------------------------------------------
     
     fig = px.bar(
         df_filtrado,
