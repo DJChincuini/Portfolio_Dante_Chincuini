@@ -163,61 +163,59 @@ st.write("##")
 #---------------------------------------------------------------------------------------------------------------------
 ### DASHBOARD
 st.write("#### Dashboard")
-       
+
 ## FILTROS
+with st.popover('FILTROS',use_container_width=True):
+    # Filtración por AÑO --------------------------------------------------------------------------
+    # Creo una lista para almacenar los años
+    años = []
+    for i in df_final['AAAA']:
+        if i not in años:
+            años.append(i)
 
-# Filtración por AÑO --------------------------------------------------------------------------
-# Creo una lista para almacenar los años
-años = []
-for i in df_final['AAAA']:
-    if i not in años:
-        años.append(i)
+    # Ordeno la lista
+    años.sort()
 
-# Ordeno la lista
-años.sort()
+    # Filtro por AÑO
+    años_filtradas = st.multiselect(
+        "FILTRAR POR AÑO",
+        años,
+        años)
+            
 
-# Filtro por AÑO
-años_filtradas = st.multiselect(
-    "FILTRAR POR AÑO",
-    años,
-    años)
-        
+    # Filtración por COMUNAS -----------------------------------------------------------------------
+    comunas = []
+    for i in df_final['COMUNA']:
+        if i not in comunas:
+            comunas.append(i)
 
-# Filtración por COMUNAS -----------------------------------------------------------------------
-comunas = []
-for i in df_final['COMUNA']:
-    if i not in comunas:
-        comunas.append(i)
-
-# Filtro por COMUNAS
-comuna_filtradas = st.multiselect(
-    "FILTRAR POR COMUNA",
-    comunas,
-    comunas,
-    help='Selecciona una opción'
-    )
-
-
-# Filtración por GRUPO ETARIO ------------------------------------------------------------------
-st.write('***Niño:*** Hasta 12 años // ***Adolescente:*** De 13 a 18 años // ***Joven Adulto:*** De 19 a 35 años // ***Adulto:*** De 36 a 50 años // ***Adulto Maduro:*** De 51 a 65 años // ***Adulto Mayor:*** Mayor de 65 años')
-
-# Filtro por GRUPO ETARIO
-edades_filtradas = st.multiselect(
-    "FILTRAR POR GRUPO ETARIO",
-    ['Niño', 'Adolescente', 'Joven Adulto', 'Adulto', 'Adulto Maduro', 'Adulto Mayor'],
-    ['Niño', 'Adolescente', 'Joven Adulto', 'Adulto', 'Adulto Maduro', 'Adulto Mayor']
-    )
+    # Filtro por COMUNAS
+    comuna_filtradas = st.multiselect(
+        "FILTRAR POR COMUNA",
+        comunas,
+        comunas,
+        help='Selecciona una opción'
+        )
 
 
-### DATAFRAME FILTRADO ###
-df_filtrado = df_final[(df_final['COMUNA'].isin(comuna_filtradas)) & (df_final['GRUPO ETARIO'].isin(edades_filtradas) & (df_final['AAAA'].isin(años_filtradas)))]
+    # Filtración por GRUPO ETARIO ------------------------------------------------------------------
+    st.write('***Niño:*** Hasta 12 años // ***Adolescente:*** De 13 a 18 años // ***Joven Adulto:*** De 19 a 35 años // ***Adulto:*** De 36 a 50 años // ***Adulto Maduro:*** De 51 a 65 años // ***Adulto Mayor:*** Mayor de 65 años')
 
-# ----------------------------------------------------------------------------------------------
+    # Filtro por GRUPO ETARIO
+    edades_filtradas = st.multiselect(
+        "FILTRAR POR GRUPO ETARIO",
+        ['Niño', 'Adolescente', 'Joven Adulto', 'Adulto', 'Adulto Maduro', 'Adulto Mayor'],
+        ['Niño', 'Adolescente', 'Joven Adulto', 'Adulto', 'Adulto Maduro', 'Adulto Mayor']
+        )
 
+    ### DATAFRAME FILTRADO ###
+    df_filtrado = df_final[(df_final['COMUNA'].isin(comuna_filtradas)) & (df_final['GRUPO ETARIO'].isin(edades_filtradas) & (df_final['AAAA'].isin(años_filtradas)))]
+
+
+# ----------------------------------------------------------------------------------------------------------------------
 st.write('####')
 x = len(df_filtrado)
 st.write(f"Cantidad de casos: {x}")
-
 
 fig = go.Figure() # Scatter Plot ----------------------------------------------------------------------------------------
 
