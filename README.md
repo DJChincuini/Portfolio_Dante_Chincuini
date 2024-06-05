@@ -12,4 +12,4 @@ Soy un Data Scientist con especial interés en la disciplina del Data Analysis.
 
 #
 ### Stack Tecnológico
-Tengo conocimientos en Python, SQL, Google Cloud Platform, PowerBI y demás tecnologías.
+Tengo conocimientos en *Python*, *SQL*, *Google Cloud Platform*, *PowerBI*
