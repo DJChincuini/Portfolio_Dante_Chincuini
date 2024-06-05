@@ -1,6 +1,6 @@
 ## Hola, soy Dante 👋
 
-En este repositorio vas a encontrar el desarrollo y actualización de mí portfolio personal construído en Streamlit. Actualmente estoy desarrollando un análsis en sobre dos datasets obtenidos del Observatorio Vial de la ciudad autónoma de Buenos Aires.
+En este repositorio vas a encontrar el desarrollo y actualización de mí portfolio personal construído en Streamlit. Actualmente estoy desarrollando un análsis en sobre dos datasets obtenidos del Observatorio Vial de la ciudad autónoma de Buenos Aires. Anteriormente he desarrollado este análisis en el bootcamp SoyHerny cómo parte del segundo proyecto individual.
 
  Soy un Data Scientist con especial interés en el Data Analysis para la toma de desiciones.
 
