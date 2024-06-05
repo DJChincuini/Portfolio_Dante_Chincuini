@@ -8,7 +8,7 @@ En este repositorio vas a encontrar el desarrollo y actualización de mí portfo
 
 #
 ### Sobre mí
-Hola, me llamo Dante. Soy de Rosario, Argentina. 
+Hola, me llamo Dante y actualmente estoy viviendo en Rosario, Argentina. 
 
 Soy un Data Scientist con especial interés en el Data Analysis. Estoy en busqueda de mí primera experiencia laboral en el ámbito IT y con este repositorio quiero mostrar mis habilidades en el mundo de la Ciencia de Datos, el análisis estratégico y el uso de Machine Learning en el ámbito empresarial. 
 
