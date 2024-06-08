@@ -78,11 +78,12 @@ st.write("*Creado por Dante Chincuini* \n####")
 
 #---------------------------------------------------------------------------------------------------------------------
 ### INTRODUCCIÓN
-st.write("#### **Introducción**")
+st.write("#### **Introducción** \n *¿Qué tan peligroso es viajar en Argentina?*")
 
 st.write(
     f'''
-    Los siniestros viales es la 4ta causa de muerte más grande en toda Argentina, y la primera en dónde no hay problemas con alguna enfermedad. Viendo estos datos, me dispuse a indagar sobre cuales son los principales factores para que esto suceda, quienes están en mayor peligro y qué podemos hacer para bajar estos números.
+    \n ###
+Los siniestros viales es la 4ta causa de muerte más grande en toda Argentina, y la primera en dónde no hay problemas con alguna enfermedad. Viendo estos datos, me dispuse a indagar sobre cuales son los principales factores para que esto suceda, quienes están en mayor peligro y qué podemos hacer para bajar estos números.
 
 Para esto, segmenté la información y me dediqué a estudiar sólo los datos provenientes de la ciudad de Buenos Aires, una de las ciudades con mayor cantidad de muertes en siniestros viales, utilizando dos datasets provistos por el Observatorio Vial de esta ciudad.
 
