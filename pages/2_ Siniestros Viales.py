@@ -99,6 +99,10 @@ De este informe pude ver que las victimas más recurrentes de estos homicidios s
 
 Los motociclistas tienen números estables con diferentes vehículos, lo que nos muestra que hay una problemática con este tipo de transporte.
 
+Si dividimos la ciudad por sus comunas, podemos ver que la comuna 1 es la que mayor tasa de siniestros tiene. Esta, siendo la comuna más turística y sede de importantes edificios a nivel ciudad y nacional, es también la comuna más concurrida día a día, por lo que no es de extrañar que sea en dónde más casos de siniestros haya y en dónde continue siendo así.
+
+Mientras tanto, la comuna 4 posee las avenidas *Coronel Roca* y *Coronel Francisco Ravanal* así como la avenida *Perito Moreno*, éstas al ser las arterias que comunican esta comuna con otros barrios de la ciudad pueden ser centro de siniestros viales gracias a la cantidad de vehículos que circulan a diario. Un análisis similar puede ser aplicado a la comuna 9.
+
 \n ### \n ###''')
 
 
