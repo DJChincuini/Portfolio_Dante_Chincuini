@@ -82,8 +82,10 @@ st.write("#### **Introducción**")
 
 st.write(
     f'''
-    En este proyecto abordaré realicé un análisis sobre los siniestros viales en la ciudad autónoma de Buenos Aires. 
-Primeramente, realicé un informe EDA para ver las relaciones de los datos, los nulos que contiene y buscar outliers que pueden condicionar al posterior análisis. Todo este proceso lo pueden encontrar en mi repositorio de github en el siguiente link: https://github.com/DJChincuini/Data_Analysis-Chincuini/blob/main/EDA.ipynb.
+    Los siniestros viales es la 4ta causa de muerte más grande en toda Argentina, y la primera en dónde no hay problemas con alguna enfermedad. Viendo estos datos, me dispuse a indagar sobre cuales son los principales factores para que esto suceda, quienes están en mayor peligro y qué podemos hacer para bajar estos números.
+
+Para esto, segmenté la información y me dediqué a estudiar sólo los datos provenientes de la ciudad de Buenos Aires, una de las ciudades con mayor cantidad de muertes en siniestros viales, utilizando dos datasets provistos por el Observatorio Vial de esta ciudad.
+
 \n ###''')
 
 
@@ -231,7 +233,7 @@ fig.add_trace(go.Scatter(x=conteo_por_año.index, y=conteo_por_año.values, mode
 fig.update_layout(
     title='Cantidad de casos por año',
     xaxis_title='Año',
-    yaxis_title='Cantidad de casos'    
+    yaxis_title='Cantidad de casos'
 )
 st.plotly_chart(fig,use_container_width=True)
 
