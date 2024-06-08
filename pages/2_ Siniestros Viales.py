@@ -99,9 +99,15 @@ De este informe pude ver que las victimas más recurrentes de estos homicidios s
 
 Los motociclistas tienen números estables con diferentes vehículos, lo que nos muestra que hay una problemática con este tipo de transporte.
 
-Si dividimos la ciudad por sus comunas, podemos ver que la comuna 1 es la que mayor tasa de siniestros tiene. Esta, siendo la comuna más turística y sede de importantes edificios a nivel ciudad y nacional, es también la comuna más concurrida día a día, por lo que no es de extrañar que sea en dónde más casos de siniestros haya y en dónde continue siendo así.
+Si dividimos la ciudad por sus comunas, podemos ver que la comuna 1 es la que mayor tasa de siniestros tiene. Esta, siendo la comuna más turística y sede de importantes edificios a nivel ciudad y nacional, es también la comuna más concurrida día a día, por lo que no es de extrañar que sea en dónde más casos de siniestros haya y en dónde continue siendo así. Esto es parcialmente confirmado gracias a que es también la comuna más peligrosa para el peaton.
 
 Mientras tanto, la comuna 4 posee las avenidas *Coronel Roca* y *Coronel Francisco Ravanal* así como la avenida *Perito Moreno*, éstas al ser las arterias que comunican esta comuna con otros barrios de la ciudad pueden ser centro de siniestros viales gracias a la cantidad de vehículos que circulan a diario. Un análisis similar puede ser aplicado a la comuna 9.
+
+También se puede ver que los números van bajando a lo largo del tiempo, esto se debe a que se han ido implementando más controles e invirtiendo en infraestructura a lo largo de los años. Los datos llegan a su punto más bajo en 2020, gracias a la pandemia de Covid-19.
+
+En 2021, la comuna 4 y la comuna 9 superan a la comuna 1. Esto se debe a que varios rubros ya estaban funcionando con normalidad mientras que seguía habiendo grandes restricciones en el turismo, sin embargo, en el segundo semestre de este año, la cantidad de victimas fatales en la comuna 1 estaba creciendo.
+
+Estas tres comunas, son la que mayor cantidad de tráfico tienen día a día, ya sea vehicular o por peatón. Estas comunas con grandes volúmenes de vehículos tienen una relación igualmente proporcional a la cantidad de motociclista siendo victimas de siniestros fatales.
 
 \n ### \n ###''')
 
