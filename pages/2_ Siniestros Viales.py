@@ -107,7 +107,7 @@ También se puede ver que los números van bajando a lo largo del tiempo, esto s
 
 En 2021, la comuna 4 y la comuna 9 superan a la comuna 1. Esto se debe a que varios rubros ya estaban funcionando con normalidad mientras que seguía habiendo grandes restricciones en el turismo, sin embargo, en el segundo semestre de este año, la cantidad de victimas fatales en la comuna 1 estaba creciendo.
 
-Estas tres comunas, son la que mayor cantidad de tráfico tienen día a día, ya sea vehicular o por peatón. Estas comunas con grandes volúmenes de vehículos tienen una relación igualmente proporcional a la cantidad de motociclista siendo victimas de siniestros fatales.
+Estas tres comunas, son la que mayor cantidad de tráfico tienen día a día, ya sea vehicular o por peatón. Estas comunas con grandes volúmenes de vehículos tienen una relación igualmente proporcional a la cantidad de motociclista siendo víctimas de siniestros fatales. Este factor nos hace preguntar ¿Por qué los datos aumentan tanto cuando se cumplen estas variables? Y ¿Por qué esto sucede con las motos y no necesariamente con otros vehículos? 
 
 \n ### \n ###''')
 
