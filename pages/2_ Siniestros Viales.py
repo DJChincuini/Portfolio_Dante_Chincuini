@@ -254,8 +254,8 @@ with superior[0]: # Map Plot ---------------------------------------------------
         df_filtrado,
         lat="pos y",
         lon="pos x",
-        color='HH',
-        color_continuous_scale=px.colors.cyclical.IceFire,
+        color='AAAA',
+        color_continuous_scale=px.colors.sequential.Viridis,
         size_max=15,
         zoom=10,
         title='Lugares de los siniestros'
