@@ -87,7 +87,19 @@ Los siniestros viales es la 4ta causa de muerte más grande en toda Argentina, y
 
 Para esto, segmenté la información y me dediqué a estudiar sólo los datos provenientes de la ciudad de Buenos Aires, una de las ciudades con mayor cantidad de muertes en siniestros viales, utilizando dos datasets provistos por el Observatorio Vial de esta ciudad.
 
-\n ###''')
+\n ### \n ###''')
+
+
+st.write("#### **Desarrollo del análisis** \n *Avenidas, motociclistas y outliers*")
+
+st.write(
+    f'''
+    \n ###
+De este informe pude ver que las victimas más recurrentes de estos homicidios son los motociclistas y peatones. Los segundos, son más propensos en morir contra un transporte de pasajeros o un auto; si los comparamos con los números de los datos en dónde los acusados utilizan otros tipos de transporte sólo corresponde al 30% de los casos.
+
+Los motociclistas tienen números estables con diferentes vehículos, lo que nos muestra que hay una problemática con este tipo de transporte.
+
+\n ### \n ###''')
 
 
 #---------------------------------------------------------------------------------------------------------------------
