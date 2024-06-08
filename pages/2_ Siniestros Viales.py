@@ -90,7 +90,7 @@ Para esto, segmenté la información y me dediqué a estudiar sólo los datos pr
 \n ### \n ###''')
 
 
-st.write("#### **Desarrollo del análisis** \n *Avenidas, motociclistas y outliers*")
+st.write("#### **Desarrollo del análisis** \n *Motos, Avenidas y Outliers*")
 
 st.write(
     f'''
