@@ -89,7 +89,7 @@ Para esto, segmenté la información y me dediqué a estudiar sólo los datos pr
 
 \n ### \n ###''')
 
-
+### DESARROLLO
 st.write("#### **Desarrollo del análisis** \n *Motos, Avenidas y Outliers*")
 
 st.write(
@@ -109,12 +109,8 @@ En 2021, la comuna 4 y la comuna 9 superan a la comuna 1. Esto se debe a que var
 
 Estas tres comunas son las que mayor cantidad de tráfico tienen día a día, ya sea vehicular o por peatón, sea en avenidas o en cualquier otro tipo de calles. Estas, que contienen grandes volúmenes de vehículos tienen una relación igualmente proporcional a la cantidad de motociclista siendo víctimas de siniestros fatales. Este factor nos hace preguntar ¿Por qué los datos aumentan tanto cuando se cumplen estas variables? Y ¿Por qué esto sucede con las motos y no necesariamente con otros vehículos? 
 
-
-
 \n ### \n ###''')
 
-
-#---------------------------------------------------------------------------------------------------------------------
 ### KPIs
 st.write("#### **KPIs**")
 
