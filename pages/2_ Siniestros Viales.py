@@ -144,7 +144,7 @@ with kpi1:
     # Fórmula del primer KPI    
     st.latex(
         r'''
-        KPI = \frac{\left(\frac{H actual}{S actual}\right)}{\left(\frac{H anterior}{S anterior}\right) * 0.9}
+        KPI = \frac{H actual}{{H anterior} * 0.9}
         '''
     )
     
@@ -152,9 +152,7 @@ with kpi1:
     st.write(f'''
     Dónde:\n
     + *H actual* es la cantidad de homicidios en siniestros en el último semestre\n
-    + *S actual* es la cantidad total de siniestros en el último semestre\n
     + *H anterior* es la cantidad de homicidios en siniestros en el semestre anterior\n
-    + *S anterior* es la cantidad total de siniestros en el semestre anterior
     ''')
 
 # Segunda Columna
