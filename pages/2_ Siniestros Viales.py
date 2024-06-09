@@ -87,7 +87,29 @@ Los siniestros viales es la 4ta causa de muerte más grande en toda Argentina, y
 
 Para esto, segmenté la información y me dediqué a estudiar sólo los datos provenientes de la ciudad de Buenos Aires, una de las ciudades con mayor cantidad de muertes en siniestros viales, utilizando dos datasets provistos por el Observatorio Vial de esta ciudad.
 
-\n ### \n ###''')
+\n ###''')
+
+
+# Datasets Hechos
+with st.expander("Hechos"):
+    st.write("En este Dataset se registran los datos sobre el lugar geográfico y la hora de cada siniestro")
+    st.dataframe(hechos,column_config={
+        "AAAA": st.column_config.NumberColumn("AÑO",format="%d"),
+        "MM": st.column_config.NumberColumn("MES"),
+        "DD": st.column_config.NumberColumn("DIA"),
+        "FECHA":st.column_config.DateColumn(format="DD.MM.YYYY")
+    })
+    
+# Datasets Victimas
+with st.expander("Victimas"):
+    st.write("En este Dataset se registran los datos centrados en los participantes de los siniestros, el estado de las victimas y los vehículos implicados")
+    st.dataframe(victimas, column_config={
+        "FECHA":st.column_config.DateColumn(format="DD.MM.YYYY"),
+        "FECHA_FALLECIMIENTO":st.column_config.DatetimeColumn(format="DD.MM.YYYY h:mm a")
+    })
+st.write("##")
+
+
 
 ### DESARROLLO
 st.write("#### **Desarrollo del análisis** \n *Motos, Avenidas y Outliers*")
@@ -112,7 +134,7 @@ Estas tres comunas son las que mayor cantidad de tráfico tienen día a día, ya
 \n ### \n ###''')
 
 ### KPIs
-st.write("#### **KPIs**")
+st.write("#### **KPIs** \n *Indicadores claves*")
 
 kpi1,kpi2 = st.columns(2) # Creo dos columnas para presentar los KPI
 
@@ -152,36 +174,16 @@ with kpi2:
     ''')
 st.write("##")
 
-
-#---------------------------------------------------------------------------------------------------------------------
-### DATASETS
-st.write('#### **Datasets**')
+### INTRODUCCIÓN
+st.write("#### **Conclusiones** \n *Midiendo los siniestros*")
 
 st.write(
-    '''
-    Para poder llevar a cabo esta investigación, utilicé los datos pertenecientes del datasets de homicidios.xlsx provisto por el Observatorio de Movilidad y Seguridad Vial de la ciudad autónoma de Buenos Aires.
-    '''
-)
+    f'''
+    \n ###
 
-# Datasets Hechos
-with st.expander("Hechos"):
-    st.write("En este Dataset se registran los datos sobre el lugar geográfico y la hora de cada siniestro")
-    st.dataframe(hechos,column_config={
-        "AAAA": st.column_config.NumberColumn("AÑO",format="%d"),
-        "MM": st.column_config.NumberColumn("MES"),
-        "DD": st.column_config.NumberColumn("DIA"),
-        "FECHA":st.column_config.DateColumn(format="DD.MM.YYYY")
-    })
-    
-# Datasets Victimas
-with st.expander("Victimas"):
-    st.write("En este Dataset se registran los datos centrados en los participantes de los siniestros, el estado de las victimas y los vehículos implicados")
-    st.dataframe(victimas, column_config={
-        "FECHA":st.column_config.DateColumn(format="DD.MM.YYYY"),
-        "FECHA_FALLECIMIENTO":st.column_config.DatetimeColumn(format="DD.MM.YYYY h:mm a")
-    })
-st.write("##")
 
+
+\n ### \n ###''')
 
 #---------------------------------------------------------------------------------------------------------------------
 ### DASHBOARD
@@ -238,7 +240,8 @@ with st.popover('FILTROS',use_container_width=True):
 # ----------------------------------------------------------------------------------------------------------------------
 st.write('####')
 x = len(df_filtrado)
-st.write(f"Cantidad de casos: {x}")
+
+st.write(f"##### Casos totales: {x}")
 
 
 
@@ -361,11 +364,11 @@ with inferior[1]: # Bar Plot ---------------------------------------------------
 st.write("#### Sobre el autor")
 st.write(
     '''
-    👋 Hola, me llamo Dante.
-    
-    📌 Soy un estudiante apasionado de programación y la estadística con un enfoque especial en el diseño, desarrollo e implementación de soluciones robustas por medio del Data Engineering 💻 así cómo también de la búsqueda de insights a través de los datos y del pensamiento analítico a la hora de la toma de decisiones 📊.
+        📌 Mi nombre es Dante. Soy un estudiante apasionado de programación y la estadística con un enfoque especial en el diseño, desarrollo e implementación de soluciones robustas por medio del Data Engineering 💻 así cómo también de la búsqueda de insights a través de los datos y del pensamiento analítico a la hora de la toma de decisiones 📊.
 
-    📈 Me considero experto en la creación de arquitecturas escalables para procesamiento gracias a mí conocimientos de GCP y Python, cómo también del análisis de datos y el diseño de estrategias ayudándome con mi conocimiento de SQL y PowerBI. También poseo conocimientos en estadística y marketing gracias a mí tecnicatura en Diseño y Comunicación Multimedial.
+        📈 Me considero experto en la creación de arquitecturas escalables para procesamiento gracias a mí conocimientos de GCP y Python, cómo también del análisis de datos y el diseño de estrategias ayudándome con mi conocimiento de SQL y PowerBI. También poseo conocimientos en estadística y marketing gracias a mí tecnicatura en Diseño y Comunicación Multimedial.
 
-    💪 Siempre en busca de desafíos que impulsen la innovación y la eficiencia en el mundo de la tecnología, mí objetivo es poder colaborar con profesionales tan apasionados cómo yo en pos de impulsar la toma de decisiones empresariales basándonos en lo que los datos pueden proveernos.
+        💪 Siempre en busca de desafíos que impulsen la innovación y la eficiencia en el mundo de la tecnología, mí objetivo es poder colaborar con profesionales tan apasionados cómo yo en pos de impulsar la toma de decisiones empresariales basándonos en lo que los datos pueden proveernos.
+
+        🚀 Ante cualquier consulta no dudes en comunicarte conmigo por mí mail: daantechincuini42@gmail.com
     ''')
