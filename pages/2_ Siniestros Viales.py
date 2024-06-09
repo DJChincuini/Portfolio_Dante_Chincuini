@@ -83,9 +83,9 @@ st.write("#### **Introducción** \n *¿Qué tan peligroso es viajar en Argentina
 st.write(
     f'''
     \n ###
-Los siniestros viales es la 4ta causa de muerte más grande en toda Argentina, y la primera en dónde no hay problemas con alguna enfermedad. Viendo estos datos, me dispuse a indagar sobre cuales son los principales factores para que esto suceda, quienes están en mayor peligro y qué podemos hacer para bajar estos números.
+Los siniestros viales es la 4ta causa de muerte más grande en toda Argentina, y la primera en dónde no hay problemas con alguna enfermedad. Viendo estos datos, me dispuse a indagar sobre cuales son los principales factores para que esto suceda, quienes están en mayor peligro y qué podemos hacer para bajar estos números. Al final de esta página podras encontrar una recreación del dashboard que llevé a cabo en Power Bi para este proyecto. Si quieres ver el dashboard original, lo podrás encontrar en: https://github.com/DJChincuini/Data_Analysis-Chincuini/tree/main.
 
-Para esto, segmenté la información y me dediqué a estudiar sólo los datos provenientes de la ciudad de Buenos Aires, una de las ciudades con mayor cantidad de muertes en siniestros viales, utilizando dos datasets provistos por el Observatorio Vial de esta ciudad.
+Para este estudio, segmenté la información y me dediqué a estudiar sólo los datos provenientes de la ciudad de Buenos Aires, una de las ciudades con mayor cantidad de muertes en siniestros viales, utilizando dos datasets provistos por el Observatorio Vial de esta ciudad.
 
 \n ###''')
 
