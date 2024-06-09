@@ -129,8 +129,9 @@ También se puede ver que los números van bajando a lo largo del tiempo, esto s
 
 En 2021, la comuna 4 y la comuna 9 superan a la comuna 1. Esto se debe a que varios rubros ya estaban funcionando con normalidad mientras que seguía habiendo grandes restricciones en el turismo, sin embargo, en el segundo semestre de este año, la cantidad de victimas fatales en la comuna 1 estaba creciendo.
 
-Estas tres comunas son las que mayor cantidad de tráfico tienen día a día, ya sea vehicular o por peatón, sea en avenidas o en cualquier otro tipo de calles. Estas, que contienen grandes volúmenes de vehículos tienen una relación igualmente proporcional a la cantidad de motociclista siendo víctimas de siniestros fatales. Este factor nos hace preguntar ¿Por qué los datos aumentan tanto cuando se cumplen estas variables? Y ¿Qué papel juegan las motos y no necesariamente otros vehículos? 
+Estas tres comunas son las que mayor cantidad de tráfico tienen día a día, ya sea vehicular o por peatón, sea en avenidas o en cualquier otro tipo de calles. Estas, que contienen grandes volúmenes de vehículos tienen una relación igualmente proporcional a la cantidad de motociclistas siendo *víctimas* de siniestros fatales y permaciendo cómo uno de los *acusados* con niveles más altos a lo largo de los años. Este factor nos hace preguntar ¿Por qué los datos aumentan tanto cuando se cumplen estas variables? Y ¿Qué papel juegan las motos y no necesariamente otros vehículos? 
 
+Si investigamos fuentes exteriores a los datasets, podemos encontrar que a lo largo de los años se han llevado a cabo campañas de controles de tránsito, lo que ha ayudado a controlar los números de siniestros a lo largo de los años. En el año 2018 se ha llevado a cabo obras de remodelación en diversas avenidas, por lo que se produjeron cortes y desvíos en todo el año, lo que provocó que el año 2018 sea el año con más cantidad de siniestros. En el año 2019 se bajó considerablemente este número gracias a las mismas avenidas y al aumento de controles debido al gran número de homicidios que hubo el año anterior.
 \n ### \n ###''')
 
 ### KPIs
