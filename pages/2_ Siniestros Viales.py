@@ -181,12 +181,19 @@ st.write(
 
 **Primer KPI:**
 
-Para que se cumpla el primer KPIs, el segundo semestre debería haber una cantidad de casos menor a 49.5. Hubo, en cambio, una cantidad de 42 casos. Este corresponde al 76.3% de los casos ocurridos en el primer semestre.
+Para que se cumpla el primer KPI, el segundo semestre debería haber una cantidad de casos menor a 49.5. Hubo, en cambio, una cantidad de 42 casos. Este corresponde al 76.3% de los casos ocurridos en el primer semestre.
 
 Si bien el objetivo se alcazó, bajando considerablemente los homicidios en siniestros, se debe comprender que  el valor sigue siendo alto, por lo que sería optimo que se realicen más controles e inversión en infraestructura de seguridad para bajar aún más el número de casos.
 
 **Segundo KPI:**
 
+Para que se cumpla el segundo KPI, en el año 2021 debió haber contado con menos de 26. Sin embargo, en este año ocurrieron 46 casos en total, el 164,2% comparado al año 2020.
+
+Sin embargo, tengamos en cuenta que el año 2020 fue un caso excepcional gracias a la pandemia de COVID-19, esta, al obligar a las personas a permanecer aisladas, ha influenciado a la caída rotunda de homicidios en siniestros. Por lo que lo optimo para el estudio sería comparar al año 2021 con el año 2019.
+
+En el 2019 hubo 50 casos en total, si tomamos este dato cómo 'SM anterior', deberíamos obtener menos de 46.5 para que el KPI se cumpla. Por lo que, al tener 46 casos en 2021 podemos ver que todavía hay mucho que mejorar.
+
+Cómo en el primer KPI, se debe invvertir aún más en controles de transito e infraestructura, pero también sería buena idea invertir en campañas de concientización para motociclistas.
 
 \n ### \n ###''')
 
