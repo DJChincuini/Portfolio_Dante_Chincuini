@@ -185,6 +185,8 @@ Para que se cumpla el primer KPIs, el segundo semestre debería haber una cantid
 
 Si bien el objetivo se alcazó, bajando considerablemente los homicidios en siniestros, se debe comprender que  el valor sigue siendo alto, por lo que sería optimo que se realicen más controles e inversión en infraestructura de seguridad para bajar aún más el número de casos.
 
+**Segundo KPI:**
+
 
 \n ### \n ###''')
 
