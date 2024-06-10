@@ -25,15 +25,6 @@ with body[0]:
     )
 st.write('#')
 
-with body[1]:
-    espacio = st.columns(3)
-    with espacio[0]:
-        pass
-    with espacio[1]:
-        st.image('../Img/foto perfil.jpg', width=250)
-    with espacio[2]:
-        pass
-    
 st.write('#')
 
 # PROYECTOS -----------------------------------------------------------------------------------------------------------
