@@ -248,8 +248,24 @@ with st.popover('FILTROS',use_container_width=True):
         ['Niño', 'Adolescente', 'Joven Adulto', 'Adulto', 'Adulto Maduro', 'Adulto Mayor']
         )
 
+
+    # Filtración por TIPO DE CALLE -----------------------------------------------------------------------
+    calles = []
+    for i in df_final['TIPO_DE_CALLE']:
+        if i not in calles:
+            calles.append(i)
+
+    # Filtro por COMUNAS
+    calles_filtradas = st.multiselect(
+        "FILTRAR POR TIPO DE CALLE",
+        calles,
+        calles,
+        help='Selecciona una opción'
+        )
+
+
     ### DATAFRAME FILTRADO ###
-    df_filtrado = df_final[(df_final['COMUNA'].isin(comuna_filtradas)) & (df_final['GRUPO ETARIO'].isin(edades_filtradas) & (df_final['AAAA'].isin(años_filtradas)))]
+    df_filtrado = df_final[(df_final['COMUNA'].isin(comuna_filtradas)) & (df_final['GRUPO ETARIO'].isin(edades_filtradas)) & (df_final['AAAA'].isin(años_filtradas)) & (df_final['TIPO_DE_CALLE'].isin(calles_filtradas))]
 
 
 # ----------------------------------------------------------------------------------------------------------------------
