@@ -194,9 +194,9 @@ Para que se cumpla el segundo KPI, en el año 2021 debió haber contado con meno
 
 Sin embargo, tengamos en cuenta que el año 2020 fue un caso excepcional gracias a la pandemia de COVID-19. Esta, al obligar a las personas a permanecer aisladas, ha influenciado a la caída rotunda de homicidios en siniestros. Por lo que lo optimo para el estudio sería comparar al año 2021 con el año 2019.
 
-En el 2019 hubo 50 casos en total, si tomamos este dato cómo 'SM anterior', deberíamos obtener menos de 46.5 para que el KPI se cumpla. Por lo que, al tener 46 casos en 2021 podemos ver que todavía hay mucho que mejorar.
+En el 2019 hubo 50 casos en total, si tomamos este dato cómo 'SM anterior', deberíamos obtener menos de 46.5 casos para que el KPI se cumpla. Por lo que, al tener 46 casos en 2021 podemos ver que todavía hay mucho que mejorar.
 
-Cómo en el primer KPI, se debe invvertir aún más en controles de transito e infraestructura, pero también sería buena idea invertir en campañas de concientización para motociclistas.
+Cómo en el primer KPI, se debe invertir aún más en controles de transito e infraestructura, pero también sería buena idea invertir en campañas de concientización para motociclistas.
 
 \n ### \n ###''')
 
