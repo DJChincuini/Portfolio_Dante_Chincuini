@@ -133,7 +133,7 @@ Estas tres comunas son las que mayor cantidad de tráfico tienen día a día, ya
 
 Si investigamos fuentes exteriores a los datasets, podemos encontrar que a lo largo de los años se han llevado a cabo campañas de controles de tránsito, lo que ha ayudado a controlar los números de siniestros a lo largo de los años. En el año 2018 se ha llevado a cabo obras de remodelación en diversas avenidas, por lo que se produjeron cortes y desvíos en todo el año, lo que provocó que el año 2018 sea el año con más cantidad de siniestros, muchos de ellos en avenidas. Por lo que podríamos considerar a las avenidas en 2018 cómo un outlier, sin embargo, este tipo de calle sigue estando entre las más peligrosas en los demás años.
 
-En el año 2019 se bajó considerablemente este número gracias a las mismas avenidas y al aumento de controles debido al gran número de homicidios que hubo el año anterior.
+En el año 2019 se bajó considerablemente este número gracias a las mismas avenidas remodeladas y al aumento de controles debido al gran número de homicidios que hubo el año anterior.
 \n ### \n ###''')
 
 ### KPIs
