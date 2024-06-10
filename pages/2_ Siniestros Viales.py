@@ -190,7 +190,7 @@ Si bien el objetivo se alcazó, bajando considerablemente los homicidios en sini
 
 **Segundo KPI:**
 
-Para que se cumpla el segundo KPI, en el año 2021 debió haber contado con menos de 26 casos. Sin embargo, en este año ocurrieron 46 casos en total, el 164,2% comparado al año 2020.
+Para que se cumpla el segundo KPI, en el año 2021 debió haber contado con menos de 26 casos. En este año ocurrieron 46 casos en total, el 164,2% comparado al año 2020.
 
 Sin embargo, tengamos en cuenta que el año 2020 fue un caso excepcional gracias a la pandemia de COVID-19, esta, al obligar a las personas a permanecer aisladas, ha influenciado a la caída rotunda de homicidios en siniestros. Por lo que lo optimo para el estudio sería comparar al año 2021 con el año 2019.
 
