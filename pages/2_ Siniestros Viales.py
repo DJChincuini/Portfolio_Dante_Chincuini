@@ -131,7 +131,9 @@ En 2021, la comuna 4 y la comuna 9 superan a la comuna 1. Esto se debe a que var
 
 Estas tres comunas son las que mayor cantidad de tráfico tienen día a día, ya sea vehicular o por peatón, sea en avenidas o en cualquier otro tipo de calles. Estas, que contienen grandes volúmenes de vehículos tienen una relación igualmente proporcional a la cantidad de motociclistas siendo *víctimas* de siniestros fatales y permaciendo cómo uno de los *acusados* con niveles más altos a lo largo de los años. Este factor nos hace preguntar ¿Por qué los datos aumentan tanto cuando se cumplen estas variables? Y ¿Qué papel juegan las motos y no necesariamente otros vehículos? 
 
-Si investigamos fuentes exteriores a los datasets, podemos encontrar que a lo largo de los años se han llevado a cabo campañas de controles de tránsito, lo que ha ayudado a controlar los números de siniestros a lo largo de los años. En el año 2018 se ha llevado a cabo obras de remodelación en diversas avenidas, por lo que se produjeron cortes y desvíos en todo el año, lo que provocó que el año 2018 sea el año con más cantidad de siniestros. En el año 2019 se bajó considerablemente este número gracias a las mismas avenidas y al aumento de controles debido al gran número de homicidios que hubo el año anterior.
+Si investigamos fuentes exteriores a los datasets, podemos encontrar que a lo largo de los años se han llevado a cabo campañas de controles de tránsito, lo que ha ayudado a controlar los números de siniestros a lo largo de los años. En el año 2018 se ha llevado a cabo obras de remodelación en diversas avenidas, por lo que se produjeron cortes y desvíos en todo el año, lo que provocó que el año 2018 sea el año con más cantidad de siniestros, muchos de ellos en avenidas. Por lo que podríamos considerar a las avenidas en 2018 cómo un outlier, sin embargo, este tipo de calle sigue estando entre las más peligrosas en los demás años.
+
+En el año 2019 se bajó considerablemente este número gracias a las mismas avenidas y al aumento de controles debido al gran número de homicidios que hubo el año anterior.
 \n ### \n ###''')
 
 ### KPIs
@@ -281,6 +283,8 @@ superior = st.columns(2)
 
 with superior[0]: # Map Plot ----------------------------------------------------------------------------------------------
 
+    Años = df_filtrado['AAAA']
+
     # Leo el token del map plot
     with open('mapbox_token.txt', 'r') as file:
         token = file.read()
@@ -293,8 +297,8 @@ with superior[0]: # Map Plot ---------------------------------------------------
         df_filtrado,
         lat="pos y",
         lon="pos x",
-        color='AAAA',
-        color_continuous_scale=px.colors.sequential.Viridis,
+        color="VICTIMA",
+        color_continuous_scale=px.colors.sequential.Rainbow,
         size_max=15,
         zoom=10,
         title='Lugares de los siniestros'
