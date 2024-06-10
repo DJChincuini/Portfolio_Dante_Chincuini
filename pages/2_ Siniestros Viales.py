@@ -117,7 +117,7 @@ st.write("#### **Desarrollo del análisis** \n *Motos, Avenidas y Outliers*")
 st.write(
     f'''
     \n ###
-De este informe pude ver que las victimas más recurrentes de estos homicidios son los motociclistas y peatones. Los segundos, son más propensos en morir contra un transporte de pasajeros o un auto; si los comparamos con los números de los datos en dónde los acusados utilizan otros tipos de transporte sólo corresponde al 30% de los casos.
+Primeramente, realicé un informe EDA (Exploratory Data Analysis), si quieres verlo lo puedes encontrar [aquí](https://github.com/DJChincuini/Data_Analysis-Chincuini/blob/main/EDA.ipynb). De este informe pude ver que las victimas más recurrentes de estos homicidios son los motociclistas y peatones. Los segundos, son más propensos en morir contra un transporte de pasajeros o un auto; si los comparamos con los números de los datos en dónde los acusados utilizan otros tipos de transporte sólo corresponde al 30% de los casos.
 
 Los motociclistas tienen números estables con diferentes vehículos, lo que nos muestra que hay una problemática con este tipo de transporte.
 
