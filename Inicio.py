@@ -30,7 +30,7 @@ with body[1]:
     with espacio[0]:
         pass
     with espacio[1]:
-        st.image('./Img/foto perfil.jpg', width=250)
+        st.image('../Img/foto perfil.jpg', width=250)
     with espacio[2]:
         pass
     
